@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Repa</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ repa.id }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ repa.nom }}</td>
+            </tr>
+            <tr>
+                <th>Heure</th>
+                <td>{% if repa.heure %}{{ repa.heure|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Prix</th>
+                <td>{{ repa.prix }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ repa.description }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('repas_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('repas_edit', { 'id': repa.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

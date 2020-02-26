@@ -1,0 +1,24 @@
+livre_index:
+    path:     /
+    defaults: { _controller: "BibliothequeBundle:Livre:index" }
+    methods:  GET
+
+livre_show:
+    path:     /{id}/show
+    defaults: { _controller: "BibliothequeBundle:Livre:show" }
+    methods:  GET
+
+livre_new:
+    path:     /new
+    defaults: { _controller: "BibliothequeBundle:Livre:new" }
+    methods:  [GET, POST]
+
+livre_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "BibliothequeBundle:Livre:edit" }
+    methods:  [GET, POST]
+
+livre_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "BibliothequeBundle:Livre:delete" }
+    methods:  DELETE

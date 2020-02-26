@@ -1,0 +1,24 @@
+dashboard_notification_index:
+    path:     /
+    defaults: { _controller: "ReclamationBundle:Notification:index" }
+    methods:  GET
+
+dashboard_notification_show:
+    path:     /{id}/show
+    defaults: { _controller: "ReclamationBundle:Notification:show" }
+    methods:  GET
+
+dashboard_notification_new:
+    path:     /new
+    defaults: { _controller: "ReclamationBundle:Notification:new" }
+    methods:  [GET, POST]
+
+dashboard_notification_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "ReclamationBundle:Notification:edit" }
+    methods:  [GET, POST]
+
+dashboard_notification_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "ReclamationBundle:Notification:delete" }
+    methods:  DELETE

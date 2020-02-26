@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Enseignant</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Salaire</th>
+                <td>{{ enseignant.salaire }}</td>
+            </tr>
+            <tr>
+                <th>Id</th>
+                <td>{{ enseignant.id }}</td>
+            </tr>
+            <tr>
+                <th>Mdp</th>
+                <td>{{ enseignant.mdp }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ enseignant.nom }}</td>
+            </tr>
+            <tr>
+                <th>Prenom</th>
+                <td>{{ enseignant.prenom }}</td>
+            </tr>
+            <tr>
+                <th>Adresse</th>
+                <td>{{ enseignant.adresse }}</td>
+            </tr>
+            <tr>
+                <th>Datedenaissance</th>
+                <td>{% if enseignant.dateDeNaissance %}{{ enseignant.dateDeNaissance|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('enseignant_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('enseignant_edit', { 'id': enseignant.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

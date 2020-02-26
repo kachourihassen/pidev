@@ -1,0 +1,101 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+        <div class="row">
+            <div class="col-md-12">
+                <!-- DIRECT CHAT PRIMARY -->
+                <div class="card card-prirary cardutline direct-chat direct-chat-primary">
+                    <div class="card-header">
+                        <h3 class="card-title">Chat en direct</h3>
+
+                        <div class="card-tools">
+                            <!--span data-toggle="tooltip" title="3 New Messages" class="badge bg-primary">3</span-->
+                            <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
+                            </button>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- /.card-header -->
+                    <div class="card-body" id="message-card-body">
+                        {{ render(controller(
+                            'ReclamationBundle:ChatMessage:directchatmessages'
+                        )) }}
+                    </div>
+                    <!-- /.card-body -->
+                    <div class="card-footer">
+                            <form action="#" id="form">
+                            <div class="input-group">
+                                <input type="text" id="chat_message" placeholder="Veuillez saisir votre message ..." class="form-control">
+                                <span class="input-group-append">
+                                    <button type="button" class="btn btn-primary" id="target">Envoyer</button>
+                                </span>
+                            </div>
+                            </form>
+                    </div>
+                    <!-- /.card-footer-->
+                </div>
+                <!--/.direct-chat -->
+            </div>
+            <!-- /.col -->
+        </div>
+    <!-- /.row -->
+    <audio id="audio" src="http://www.soundjay.com/button/beep-07.wav" autoplay="false" ></audio>
+{% endblock %}
+
+{% block javascripts %}
+<script type="application/javascript">
+    $(function() {
+       $( '#direct-chat-messages' ).scrollTop($( '#direct-chat-messages' ).prop("scrollHeight"));
+        sessionStorage.setItem("numberOfChatMessage",0);
+        $.getJSON("{{ path('app_messages_show') }}", function( data ) {
+            sessionStorage.setItem("numberOfChatMessage",Object.keys(data).length);
+        });
+    });
+
+    function sendChatMessage(){
+        data = JSON.stringify({ "texte": $("#chat_message").val() });
+        $.ajax({
+            type: "POST",
+            url: "{{ path('app_messages_create') }}",
+            // The key needs to match your method's input parameter (case-sensitive).
+            data: data,
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function(){$("#form")[0].reset();},
+            failure: function(errMsg) {
+                alert(errMsg);
+            }
+        });
+    }
+
+    $( "#form" ).submit(function( event ) {
+        //alert( "Handler for .submit() called." );
+        event.preventDefault();
+        sendChatMessage();
+    });
+
+    $( "#target" ).click(function(event) {
+        event.preventDefault();
+        sendChatMessage();
+    });
+
+    function LoadChat() {
+        $.getJSON("{{ path('app_messages_show') }}", function( data2 ) {
+            $nowNumberOfChatMessage = Object.keys(data2).length;
+            if($nowNumberOfChatMessage > sessionStorage.getItem("numberOfChatMessage")){
+                sessionStorage.setItem("numberOfChatMessage",Object.keys(data2).length);
+                $("#message-card-body").empty();
+                $.get( "{{path('dashboard_chatmessage_direct_chat_messages')}}", function( htmldata ) {
+                    $("#message-card-body").append(htmldata);
+                    $( '#direct-chat-messages' ).scrollTop($( '#direct-chat-messages' ).prop("scrollHeight"));
+                    var sound = document.getElementById("audio");
+                    sound.play();
+                });
+            }
+        });
+    }
+
+    setInterval( LoadChat, 1000 );
+
+</script>
+{% endblock %}

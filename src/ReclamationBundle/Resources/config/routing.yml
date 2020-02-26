@@ -1,0 +1,15 @@
+reclamation_reclamation:
+    resource: "@ReclamationBundle/Resources/config/routing/reclamation.yml"
+    prefix:   /dashboard/reclamation
+
+reclamation_notification:
+    resource: "@ReclamationBundle/Resources/config/routing/notification.yml"
+    prefix:   /dashboard/notification
+
+reclamation_chat_message:
+    resource: "@ReclamationBundle/Controller/ChatMessageController.php"
+    type:     annotation
+
+reclamation_chat_message_api:
+    resource: "@ReclamationBundle/Controller/ApiChatMessageController.php"
+    type:     annotation

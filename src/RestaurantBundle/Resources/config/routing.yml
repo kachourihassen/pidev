@@ -1,0 +1,12 @@
+restaurant_plat:
+    resource: "@RestaurantBundle/Resources/config/routing/plat.yml"
+    prefix:   /plat
+
+restaurant_repas:
+    resource: "@RestaurantBundle/Resources/config/routing/repas.yml"
+    prefix:   /repas
+
+restaurant_homepage:
+    path:     /
+    defaults: { _controller: RestaurantBundle:Default:index }
+

@@ -1,0 +1,41 @@
+<!-- Conversations are loaded here -->
+<div class="direct-chat-messages" id="direct-chat-messages">
+    {% for chatMessage in chatMessages %}
+        {% if app.user.id != chatMessage.user.id %}
+            <!-- Message. Default to the left -->
+            <div class="direct-chat-msg">
+                <div class="direct-chat-infos clearfix">
+                    <span class="direct-chat-name float-left">{{ chatMessage.user.username }}</span>
+                    <span class="direct-chat-timestamp float-right">{{ chatMessage.date | date("Y-m-d H:m:s")}}</span>
+                </div>
+                <!-- /.direct-chat-infos -->
+                <img class="direct-chat-img" src="{{ asset('/dist/img/user_logo.png') }}" alt="Message User Image">
+                <!-- /.direct-chat-img -->
+                <div class="direct-chat-text">
+                    {{ chatMessage.texte }}
+                </div>
+                <!-- /.direct-chat-text -->
+            </div>
+        {% else %}
+            <!-- Message to the right -->
+            <div class="direct-chat-msg right">
+                <div class="direct-chat-infos clearfix">
+                    <span class="direct-chat-name float-right">Vous</span>
+                    <span class="direct-chat-timestamp float-left">{{ chatMessage.date | date("Y-m-d H:m:s")}}</span>
+                </div>
+                <!-- /.direct-chat-infos -->
+                <img class="direct-chat-img" src="{{ asset('/dist/img/user_logo.png') }}" alt="Message User Image">
+                <!-- /.direct-chat-img -->
+                <div class="direct-chat-text">
+                    {{ chatMessage.texte }}
+                </div>
+                <!-- /.direct-chat-text -->
+            </div>
+        {% endif %}
+    {% endfor %}
+    <!-- /.direct-chat-msg -->
+
+
+    <!-- /.direct-chat-msg -->
+</div>
+<!--/.direct-chat-messages-->

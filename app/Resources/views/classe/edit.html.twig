@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<a href="{{ path('classe_index') }}">Back to the list</a>
+    {{ form_start(edit_form ) }}
+<body class="hold-transition register-page">
+<div class="register-box  m-auto" >
+    <div class="card">
+        <div class="card-body register-card-body">
+            <p class="login-box-msg">EDIT {{ classe.nom }}</p>
+            {{ form_widget(edit_form) }}
+            {{ form_end(edit_form) }}
+            <div class=" text-center">
+                    <input class="btn  btn-primary" type="submit" value="Edit" />
+                {% if is_granted('ROLE_ADMIN') %}
+                    {{ form_start(delete_form) }}
+                        <input class="btn  btn-danger" type="submit" value="Delete">
+                    {{ form_end(delete_form) }}
+                {%endif%}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

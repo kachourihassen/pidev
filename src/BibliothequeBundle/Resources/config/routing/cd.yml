@@ -1,0 +1,24 @@
+cd_index:
+    path:     /
+    defaults: { _controller: "BibliothequeBundle:CD:index" }
+    methods:  GET
+
+cd_show:
+    path:     /{id}/show
+    defaults: { _controller: "BibliothequeBundle:CD:show" }
+    methods:  GET
+
+cd_new:
+    path:     /new
+    defaults: { _controller: "BibliothequeBundle:CD:new" }
+    methods:  [GET, POST]
+
+cd_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "BibliothequeBundle:CD:edit" }
+    methods:  [GET, POST]
+
+cd_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "BibliothequeBundle:CD:delete" }
+    methods:  DELETE

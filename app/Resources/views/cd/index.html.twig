@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Cds list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Maisondeprod</th>
+                <th>Id</th>
+                <th>Titre</th>
+                <th>Description</th>
+                <th>Langue</th>
+                <th>Prix</th>
+                <th>Datepub</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for cD in cDs %}
+            <tr>
+                <td><a href="{{ path('cd_show', { 'id': cD.id }) }}">{{ cD.maisonDeProd }}</a></td>
+                <td>{{ cD.id }}</td>
+                <td>{{ cD.titre }}</td>
+                <td>{{ cD.description }}</td>
+                <td>{{ cD.langue }}</td>
+                <td>{{ cD.prix }}</td>
+                <td>{% if cD.datePub %}{{ cD.datePub|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('cd_show', { 'id': cD.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('cd_edit', { 'id': cD.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('cd_new') }}">Create a new cD</a>
+        </li>
+    </ul>
+{% endblock %}

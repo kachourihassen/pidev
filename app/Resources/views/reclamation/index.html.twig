@@ -1,0 +1,163 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+
+{% if is_granted('ROLE_SUPER_ADMIN') %}
+<div class="row">
+    <div class="col-md-12">
+        <!-- DONUT CHART -->
+        <div class="card card-danger">
+            <div class="card-header">
+                <h3 class="card-title">Statistiques</h3>
+
+                <div class="card-tools">
+                    <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
+                    </button>
+                    <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button>
+                </div>
+            </div>
+            <div class="card-body">
+
+                <canvas id="donutChart" style="height:230px; min-height:230px"></canvas>
+            </div>
+            <!-- /.card-body -->
+        </div>
+        <!-- /.card -->
+    </div>
+</div>
+{% endif %}
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="card-title">Reclamations list</h5>
+
+                <div class="card-tools">
+                    <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                        <i class="fas fa-minus"></i>
+                    </button>
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-tool dropdown-toggle" data-toggle="dropdown">
+                            <i class="fas fa-wrench"></i>
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-right" role="menu">
+                            <a href="#" class="dropdown-item">Action</a>
+                            <a href="#" class="dropdown-item">Another action</a>
+                            <a href="#" class="dropdown-item">Something else here</a>
+                            <a class="dropdown-divider"></a>
+                            <a href="#" class="dropdown-item">Separated link</a>
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-tool" data-card-widget="remove">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+            </div>
+            <!-- /.card-header -->
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <table class="table table-bordered">
+            <thead>
+            <tr>
+                <th>#</th>
+                <th>Date d'envoie</th>
+                <th>Titre</th>
+                <th>Description</th>
+                <th>Status</th>
+                <th>Réponse</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for reclamation in reclamations %}
+                <tr>
+                    <td><a href="{{ path('reclamation_show', { 'id': reclamation.id }) }}">{{ reclamation.id }}</a></td>
+                    <td>{% if reclamation.dateEnvoie %}{{ reclamation.dateEnvoie|date('Y-m-d H:i:s') }}{% endif %}</td>
+                    <td>{{ reclamation.titre }}</td>
+                    <td>{{ reclamation.description }}</td>
+                    <td>{% if reclamation.status.libelle is defined %}
+                        {{ reclamation.status.libelle }}
+                    {% else %}
+                        <span class="center-block">-</span>
+                    {% endif %}</td>
+
+                    <td>
+                        {% if reclamation.status.libelle is defined %}
+                            {{ reclamation.reponse }}
+                        {% else %}
+                            <span class="center-block">-</span>
+                        {% endif %}
+                    </td>
+                    <td>
+                        <a class="btn btn-info" href="{{ path('reclamation_show', { 'id': reclamation.id }) }}"><i class="fas fa-eye"></i></a>
+
+                        <a class="btn btn-warning" href="{{ path('reclamation_edit', { 'id': reclamation.id }) }}"><i class="fas fa-pen"></i></a>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+                        <div class="col-md-6">
+            <div class="card-body pad table-responsive">
+                <a class="btn btn-block btn-outline-secondary" href="{{ path('reclamation_new') }}">Create a new reclamation</a>
+            </div>
+        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block javascripts %}
+    {% if is_granted('ROLE_ADMIN') %}
+
+    <!-- ChartJS -->
+    <script src="{{ asset('plugins/chart.js/Chart.min.js') }}"></script>
+
+    <script>
+        $(function () {
+            /* ChartJS
+             * -------
+             * Here we will create a few charts using ChartJS
+             */
+
+
+            //-------------
+            //- DONUT CHART -
+            //-------------
+            // Get context with jQuery - using jQuery's .get() method.
+            var donutChartCanvas = $('#donutChart').get(0).getContext('2d')
+            var donutData        = {
+                labels: [
+                    {% for onestatus in status  %}
+                        "{{ onestatus.libelle  }}",
+                    {% endfor %}
+                ],
+                datasets: [
+                    {
+                        data: [ {% for onestatus in status  %}
+                                    {{ onestatus.reclamations|length~"," }}
+                                {% endfor %}],
+                        backgroundColor : ['#3c8dbc', '#00a65a', '#f39c12'],
+                    }
+                ]
+            }
+            var donutOptions     = {
+                maintainAspectRatio : false,
+                responsive : true,
+            }
+            //Create pie or douhnut chart
+            // You can switch between pie and douhnut using the method below.
+            var donutChart = new Chart(donutChartCanvas, {
+                type: 'doughnut',
+                data: donutData,
+                options: donutOptions
+            })
+
+        })
+    </script>
+    {% endif %}
+{% endblock %}

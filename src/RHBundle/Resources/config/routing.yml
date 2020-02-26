@@ -1,0 +1,11 @@
+rh_enseignant:
+    resource: "@RHBundle/Resources/config/routing/enseignant.yml"
+    prefix:   /enseignant
+
+rh_classe:
+    resource: "@RHBundle/Resources/config/routing/classe.yml"
+    prefix:   /classe
+
+rh_homepage:
+    path:     /
+    defaults: { _controller: RHBundle:Default:index }

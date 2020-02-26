@@ -1,0 +1,7 @@
+activite_activite:
+    resource: "@ActiviteBundle/Resources/config/routing/activite.yml"
+    prefix:   /activite
+
+activite_homepage:
+    path:     /
+    defaults: { _controller: ActiviteBundle:Default:index }

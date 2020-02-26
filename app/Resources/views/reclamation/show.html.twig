@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="card card-warning">
+        <label class="card-header" >Reclamations </label>
+    </div>
+
+    <table class="table table-bordered">
+        <tbody>
+            <tr>
+                <th style="width:9px">Id</th>
+                <td>{{ reclamation.id }}</td>
+            </tr>
+            <tr>
+                <th>Dateenvoie</th>
+                <td>{% if reclamation.dateEnvoie %}{{ reclamation.dateEnvoie|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Titre</th>
+                <td>{{ reclamation.titre }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ reclamation.description }}</td>
+            </tr>
+            <tr>
+                <th>Status</th>
+                <td>{{ reclamation.status }}</td>
+            </tr>
+            <tr>
+                <th>Reponse</th>
+                <td>{{ reclamation.reponse }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <div class="col-md-2">
+            <div class="card-body pad table-responsive">
+                <a  class="btn btn-block btn-outline-secondary" href="{{ path('reclamation_index') }}">Back to the list</a>
+            </div>
+        </div>
+
+        <a class="btn btn-warning" href="{{ path('reclamation_edit', { 'id': reclamation.id }) }}"><i class="fas fa-pen"></i></a>
+
+        <div class="col-md-2">
+            <div class="card-body pad table-responsive">
+                {{ form_start(delete_form) }}
+                <input type="submit" class="btn btn-block btn-outline-danger" class="fas fa-trash" value="Delete" />
+                {{ form_end(delete_form) }}
+            </div>
+        </div>
+    </ul>
+{% endblock %}

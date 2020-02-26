@@ -1,0 +1,24 @@
+activite_index:
+    path:     /
+    defaults: { _controller: "ActiviteBundle:Activite:index" }
+    methods:  GET
+
+activite_show:
+    path:     /{id}/show
+    defaults: { _controller: "ActiviteBundle:Activite:show" }
+    methods:  GET
+
+activite_new:
+    path:     /new
+    defaults: { _controller: "ActiviteBundle:Activite:new" }
+    methods:  [GET, POST]
+
+activite_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "ActiviteBundle:Activite:edit" }
+    methods:  [GET, POST]
+
+activite_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "ActiviteBundle:Activite:delete" }
+    methods:  DELETE

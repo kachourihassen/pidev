@@ -1,0 +1,15 @@
+preinscription_homepage:
+    path:     /inscription
+    defaults: { _controller: PreinscriptionBundle:Default:index }
+
+preinscription_homepage_list:
+    path:     /list
+    defaults: { _controller: PreinscriptionBundle:Default:inscription }
+
+preinscription_refuser:
+    path:     /refuser/{id}
+    defaults: { _controller: PreinscriptionBundle:Default:refuserInscription }
+
+preinscription_attendre:
+    path:     /attendre/{id}
+    defaults: { _controller: PreinscriptionBundle:Default:attendreInscription }

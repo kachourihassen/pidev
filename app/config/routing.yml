@@ -1,0 +1,53 @@
+preinscription:
+    resource: "@PreinscriptionBundle/Resources/config/routing.yml"
+    prefix:   /preinscription
+
+restaurant_plat:
+    resource: "@RestaurantBundle/Controller/PlatController.php"
+    type:     annotation
+
+activite:
+    resource: "@ActiviteBundle/Resources/config/routing.yml"
+    prefix:   /activite
+
+evaluation:
+    resource: "@EvaluationBundle/Resources/config/routing.yml"
+    prefix:   /evaluation
+
+paiement:
+    resource: "@PaiementBundle/Resources/config/routing.yml"
+    prefix:   /payer
+
+reclamation:
+    resource: "@ReclamationBundle/Resources/config/routing.yml"
+
+restaurant:
+    resource: "@RestaurantBundle/Resources/config/routing.yml"
+    prefix:   /resto
+
+bibliotheque:
+    resource: "@BibliothequeBundle/Resources/config/routing.yml"
+    prefix:   /biblio
+
+evenement:
+    resource: "@EvenementBundle/Resources/config/routing.yml"
+    prefix:   /event
+
+rh:
+    resource: "@RHBundle/Resources/config/routing.yml"
+    prefix:   /RH
+
+
+
+app_index:
+  path:     /
+  defaults: { _controller: "AppBundle:Default:index" }
+  methods:  GET
+
+app_admin:
+  path:     /admin
+  defaults: { _controller: "AppBundle:Default:admin" }
+  methods:  GET
+
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"

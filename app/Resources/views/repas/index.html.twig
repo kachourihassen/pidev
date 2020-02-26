@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Repas list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>Heure</th>
+                <th>Prix</th>
+                <th>Description</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for repa in repas %}
+            <tr>
+                <td><a href="{{ path('repas_show', { 'id': repa.id }) }}">{{ repa.id }}</a></td>
+                <td>{{ repa.nom }}</td>
+                <td>{% if repa.heure %}{{ repa.heure|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{{ repa.prix }}</td>
+                <td>{{ repa.description }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('repas_show', { 'id': repa.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('repas_edit', { 'id': repa.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('repas_new') }}">Create a new repa</a>
+        </li>
+    </ul>
+{% endblock %}

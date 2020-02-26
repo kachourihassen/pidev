@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Enseignants list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Salaire</th>
+                <th>Id</th>
+                <th>Mdp</th>
+                <th>Nom</th>
+                <th>Prenom</th>
+                <th>Adresse</th>
+                <th>Datedenaissance</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for enseignant in enseignants %}
+            <tr>
+                <td><a href="{{ path('enseignant_show', { 'id': enseignant.id }) }}">{{ enseignant.salaire }}</a></td>
+                <td>{{ enseignant.id }}</td>
+                <td>{{ enseignant.mdp }}</td>
+                <td>{{ enseignant.nom }}</td>
+                <td>{{ enseignant.prenom }}</td>
+                <td>{{ enseignant.adresse }}</td>
+                <td>{% if enseignant.dateDeNaissance %}{{ enseignant.dateDeNaissance|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('enseignant_show', { 'id': enseignant.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('enseignant_edit', { 'id': enseignant.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('enseignant_new') }}">Create a new enseignant</a>
+        </li>
+    </ul>
+{% endblock %}

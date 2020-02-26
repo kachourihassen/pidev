@@ -1,0 +1,11 @@
+bibliotheque_cd:
+    resource: "@BibliothequeBundle/Resources/config/routing/cd.yml"
+    prefix:   /cd
+
+bibliotheque_livre:
+    resource: "@BibliothequeBundle/Resources/config/routing/livre.yml"
+    prefix:   /livre
+
+bibliotheque_homepage:
+    path:     /
+    defaults: { _controller: BibliothequeBundle:Default:index }

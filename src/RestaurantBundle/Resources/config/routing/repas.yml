@@ -1,0 +1,24 @@
+repas_index:
+    path:     /
+    defaults: { _controller: "RestaurantBundle:Repas:index" }
+    methods:  GET
+
+repas_show:
+    path:     /{id}/show
+    defaults: { _controller: "RestaurantBundle:Repas:show" }
+    methods:  GET
+
+repas_new:
+    path:     /new
+    defaults: { _controller: "RestaurantBundle:Repas:new" }
+    methods:  [GET, POST]
+
+repas_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "RestaurantBundle:Repas:edit" }
+    methods:  [GET, POST]
+
+repas_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "RestaurantBundle:Repas:delete" }
+    methods:  DELETE

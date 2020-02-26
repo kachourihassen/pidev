@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Cd</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Maisondeprod</th>
+                <td>{{ cD.maisonDeProd }}</td>
+            </tr>
+            <tr>
+                <th>Id</th>
+                <td>{{ cD.id }}</td>
+            </tr>
+            <tr>
+                <th>Titre</th>
+                <td>{{ cD.titre }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ cD.description }}</td>
+            </tr>
+            <tr>
+                <th>Langue</th>
+                <td>{{ cD.langue }}</td>
+            </tr>
+            <tr>
+                <th>Prix</th>
+                <td>{{ cD.prix }}</td>
+            </tr>
+            <tr>
+                <th>Datepub</th>
+                <td>{% if cD.datePub %}{{ cD.datePub|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('cd_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('cd_edit', { 'id': cD.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

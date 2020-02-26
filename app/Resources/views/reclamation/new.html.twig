@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+    <div class="card card-warning">
+        <label class="card-header" >Ajouter une reclamation</label>
+
+    <div class="col-md-12">
+        <div class="card-body pad table-responsive">
+            {{ form_start(form) }}
+
+            <div class="form-group">
+                <label class="col-form-label" for="inputSuccess">Titre</label>
+                {{ form_widget(form.titre,{'attr':{'class':'form-control'}} )}}
+            </div>
+
+            <div class="form-group">
+                <label class="col-form-label" for="inputSuccess">Description</label>
+                {{ form_widget(form.description,{'attr':{'class':'form-control'}} )}}
+            </div>
+
+
+            {#<div class="form-group">
+                <label class="col-form-label" for="inputSuccess">Reponse</label>
+                {{ form_widget(form.reponse,{'attr':{'class':'form-control'}} )}}
+            </div>#}
+
+            <div class="col-md-2">
+                <div class="card-body pad table-responsive">
+                    {{ form_widget(form) }}
+                    <input type="submit" class="btn btn-block btn-outline-warning" value="Create" />
+                    {{ form_end(form) }}
+                </div>
+            </div>
+            <a  class="btn btn-block btn-outline-secondary" href="{{ path('reclamation_index') }}">Back to the list</a>
+        </div>
+    </div>
+
+
+    </div>
+
+
+{% endblock %}
