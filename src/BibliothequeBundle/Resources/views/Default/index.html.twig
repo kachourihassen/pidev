@@ -1,1 +1,66 @@
-Hello World!
+{% extends 'ense.html.twig' %}
+{% block body %}
+<div class="agile_banner_bottom_grids">
+    <div class="col-md-3 agile_banner_bottom_grid">
+        <div class="view view-first">
+            <img src="{{ asset('images/livrehome2.jpg')}}" alt=" " class="img-responsive" />
+            <div class="mask">
+                <h5><a href="{{ path('consulterlivre')}}" class="w3ls_dribble">consulter les livre</a></h5>
+
+            </div>
+        </div>
+        <div class="agile_banner_bottom_grid_pos">
+            <h4><a href="{{ path('consulterlivre')}}" class="w3ls_dribble">Livre</a></h4>
+        </div>
+    </div>
+    <div class="col-md-3 agile_banner_bottom_grid">
+        <div class="view view-first">
+            <img src="{{ asset('images/cdhome3.jpeg')}}" alt=" " class="img-responsive" /><br><br><br><br>
+            <div class="mask">
+                <h5 class="agileits_w3layouts1"><a href="{{ path('consultercd')}}" class="w3ls_dribble">consulter les CD/DVD</a></h5>
+
+            </div>
+        </div>
+        <div class="agile_banner_bottom_grid_pos">
+            <h4 class="agileits_w3layouts1"><a href="{{ path('consulterlivre')}}" class="w3ls_dribble">CD/DVD</a></h4>
+        </div>
+    </div>
+    <div class="col-md-3 agile_banner_bottom_grid">
+        <div class="view view-first">
+            <img src="{{ asset('images/bd1.jpg')}}" alt=" " class="img-responsive" />
+            <div class="mask">
+                <h5 class="agileits_w3layouts2"><a href="{{ path('consulterbd')}}" class="w3ls_dribble">consulter les bande dessinée</a></h5>
+
+            </div>
+        </div>
+        <div class="agile_banner_bottom_grid_pos">
+            <h4 class="agileits_w3layouts2"><a href="{{ path('consulterbd')}}" class="w3ls_dribble">Bande desinée</a></h4>
+        </div>
+    </div>
+    <div class="col-md-3 agile_banner_bottom_grid"><br>
+        <div class="view view-first">
+            <img src="{{ asset('images/dict.jpg')}}" alt=" " class="img-responsive" />
+            <div class="mask">
+                <h5 class="agileits_w3layouts3"><a href="#team">Choisir une de nos documents et emprunter un documents</a></h5>
+
+            </div>
+        </div><p><p></p>
+        <div class="agile_banner_bottom_grid_pos">
+            <h4 class="agileits_w3layouts3"><a href="#team" class="w3ls_dribble">Nos documents</a></h4>
+        </div>
+    </div>
+    <div class="clearfix"> </div>
+</div>
+
+</div>
+</div>
+{% endblock %}
+
+
+
+
+
+
+
+
+

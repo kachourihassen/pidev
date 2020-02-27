@@ -79,7 +79,7 @@ admin_home:
   defaults: { _controller: "AppBundle:Default:admin_home" }
   methods:  GET
 parent_home:
-    path:   /profile
+    path:   /ense
     defaults: { _controller: "AppBundle:Default:parent_home" }
     methods:  GET
 enseignant_home:

@@ -56,9 +56,9 @@ class Classe
      *     message="age max doit etre superieur a age min")
      */
     private $ageMax;
+
     /**
-     * One product has many features. This is the inverse side.
-     * @OneToMany(targetEntity="RHBundle\Entity\Enseignant", mappedBy="classe")
+     * @OneToOne(targetEntity="RHBundle\Entity\Enseignant", inversedBy="classe")
      */
     private $enseignant;
 
@@ -69,6 +69,15 @@ class Classe
     {
         return $this->enseignant;
     }
+
+    /**
+     * @param mixed $enseignant
+     */
+    public function setEnseignant($enseignant)
+    {
+        $this->enseignant = $enseignant;
+    }
+
 
 
 

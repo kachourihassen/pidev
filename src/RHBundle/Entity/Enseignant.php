@@ -9,6 +9,7 @@ use Doctrine\ORM\Mapping\OneToMany;
 use Doctrine\ORM\Mapping\OneToOne;
 use ReclamationBundle\Entity\Reclamation;
 use Symfony\Component\Validator\Constraints as Assert;
+
 /**
  * Enseignant
  * @ORM\Entity()
@@ -49,8 +50,7 @@ class Enseignant extends User
     private $salaire;
 
     /**
-     * One Cart has One Customer.
-     * @OneToOne(targetEntity="RHBundle\Entity\Classe", inversedBy="enseignant")
+     * @OneToOne(targetEntity="RHBundle\Entity\Classe", mappedBy="enseignant")
      * @JoinColumn(name="classe_id", referencedColumnName="id")
      */
     private $classe;

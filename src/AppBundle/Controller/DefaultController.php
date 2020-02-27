@@ -102,7 +102,7 @@ class DefaultController extends Controller
     public function parent_homeAction()
     {
         // replace this example code with whatever you need
-        return $this->render('base1.html.twig');
+        return $this->render('ense.html.twig');
     }
     public function enseignant_homeAction()
     {

@@ -5,6 +5,7 @@ namespace RHBundle\Controller;
 use DateTime;
 use RHBundle\Entity\Classe;
 use RHBundle\Entity\Enseignant;
+use RHBundle\Repository\ClasseRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -24,8 +25,15 @@ class EnseignantController extends Controller
     {
         $error = null;
         $success = null;
-        $classes = $this->getDoctrine()->getRepository(Classe::class)->findAll();
-        
+        //$classes = $this->getDoctrine()->getRepository(Classe::class)->getWithoutTeacher();
+        $classesrepository = $this->getDoctrine()
+            ->getRepository(Classe::class);
+        $query = $classesrepository->createQueryBuilder('c')
+            ->where('c.enseignant IS NULL')
+            ->getQuery();
+
+        $classes = $query->getResult();
+
         $em = $this->getDoctrine()->getManager();
         if ($request->getMethod() == Request::METHOD_POST){
             $userManager = $this->get('fos_user.user_manager');
@@ -46,7 +54,7 @@ class EnseignantController extends Controller
                 $date = DateTime::createFromFormat('Y-m-d', $request->request->get('dateNaissance'));
                 $enseignant->setDateDeNaissance($date);
                 $myClasse=$this->getDoctrine()->getRepository(Classe::class)->find($request->request->get('classe'));
-                $enseignant->setClasse($myClasse);
+
                 try {
                     $p = $enseignant->getNom() . $enseignant->getPrenom() . random_int(1, 10000);
                     $enseignant->setPlainPassword($p);
@@ -59,6 +67,8 @@ class EnseignantController extends Controller
                 }
                 $em = $this->getDoctrine()->getManager();
                 $em->persist($enseignant);
+                $myClasse->setEnseignant($enseignant);
+                $em->persist($myClasse);
                 $em->flush();
                 $message = \Swift_Message::newInstance()
                     ->setSubject("accepter")
