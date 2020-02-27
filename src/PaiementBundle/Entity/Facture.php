@@ -5,6 +5,7 @@ namespace PaiementBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\ORM\Mapping\JoinColumn;
 use Doctrine\ORM\Mapping\OneToOne;
+use Doctrine\ORM\Mapping\ManyToOne;
 
 /**
  * Facture
@@ -22,6 +23,29 @@ class Facture
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
+   //ajout d'une relation many to one pour facture new ici ****** a verifier
+    /**
+     * Many features have one product. This is the owning side.
+     * @ManyToOne(targetEntity="RHBundle\Entity\UserParent", inversedBy="factures")
+     * @JoinColumn(name="parent_id", referencedColumnName="id")
+     */
+    private $parent;
+
+    /**
+     * @return mixed
+     */
+    public function getParent()
+    {
+        return $this->parent;
+    }
+
+    /**
+     * @param mixed $parent
+     */
+    public function setParent($parent)
+    {
+        $this->parent = $parent;
+    }
 
     /**
      * @var string
@@ -40,14 +64,14 @@ class Facture
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="dateCreation", type="datetime")
+     * @ORM\Column(name="dateCreation", type="datetime" , nullable=true ,options={"default": "CURRENT_TIMESTAMP"})
      */
     private $dateCreation;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="datePayement", type="datetime")
+     * @ORM\Column(name="datePayement", nullable=true ,type="datetime")
      */
     private $datePayement;
 
@@ -60,7 +84,7 @@ class Facture
     /**
      * @var boolean
      *
-     * @ORM\Column(name="payee", type="boolean")
+     * @ORM\Column(name="payee", type="boolean" , options={"default" : 0})
      */
     private $payee;
 

@@ -1,0 +1,12 @@
+inscriptionactivite_index:
+    path:     /
+    defaults: { _controller: "ActiviteBundle:InscriptionActivite:index" }
+    methods:  GET
+
+inscriptionactivite_show:
+    path:     /{id}/show
+    defaults: { _controller: "ActiviteBundle:InscriptionActivite:show" }
+    methods:  GET
+
+
+

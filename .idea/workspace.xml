@@ -1,7 +1,448 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="36286fab-1d27-42b5-8e18-7bc0e3c8a57c" name="Default Changelist" comment="" />
+    <list default="true" id="36286fab-1d27-42b5-8e18-7bc0e3c8a57c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../.idea/symfony2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../app/Resources/views/activite/activite_part.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../app/Resources/views/activite/parent_act.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../app/Resources/views/activite/show_facture.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../app/Resources/views/admin.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../app/Resources/views/admin1.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../app/Resources/views/base1.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../app/Resources/views/bd/bdfront.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../app/Resources/views/bd/edit.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../app/Resources/views/bd/index.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../app/Resources/views/bd/new.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../app/Resources/views/bd/show.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../app/Resources/views/cd/cdfront.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../app/Resources/views/default/mailEnAttente.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../app/Resources/views/default/sendMainRefusé.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../app/Resources/views/default/sendemail.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../app/Resources/views/ense.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../app/Resources/views/evenement/calendar.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../app/Resources/views/evenement/showparent.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../app/Resources/views/indexParent.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../app/Resources/views/livre/livrefront.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../app/Resources/views/livre/livreparent.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../app/Resources/views/livre/showlivre.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../app/Resources/views/pdf.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../app/Resources/views/plat/indexplatparent.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../app/Resources/views/repas/construirerepas.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../app/Resources/views/repas/listeinscription.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../app/Resources/views/repas/mesinscriptions.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../app/Resources/views/userparent/edit.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../app/Resources/views/userparent/index.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../app/Resources/views/userparent/new.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../app/Resources/views/userparent/show.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../src/ActiviteBundle/Controller/InscriptionActiviteController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../src/ActiviteBundle/Resources/config/routing/inscriptionactivite.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../src/ActiviteBundle/Tests/Controller/InscriptionActiviteControllerTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../src/BibliothequeBundle/Controller/BDController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../src/BibliothequeBundle/Entity/Emprunter.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../src/BibliothequeBundle/Resources/config/routing/bd.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../src/BibliothequeBundle/Tests/Controller/BDControllerTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../src/EvenementBundle/EventListener/FullCalendarListener.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../src/PaiementBundle/Controller/orderController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../src/PaiementBundle/Repository/ordersRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../src/PaiementBundle/Resources/views/Default/payment_form.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../src/PaiementBundle/Resources/views/orders/show.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../src/RHBundle/Controller/UserParentController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../src/RHBundle/Form/UserParentType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../src/RHBundle/Resources/config/routing/userparent.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../src/payment.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web/images/6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web/images/ad.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web/images/aniv.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web/images/anniv.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web/images/chma3.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web/images/clown.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web/images/fete.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web/images/gateau.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web/images/jardain.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web/web/12" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/hassen.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/hassen.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/AppKernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/../app/AppKernel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/Resources/views/activite/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/../app/Resources/views/activite/edit.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/Resources/views/activite/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/../app/Resources/views/activite/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/Resources/views/activite/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/../app/Resources/views/activite/new.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/Resources/views/activite/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/../app/Resources/views/activite/show.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/Resources/views/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/../app/Resources/views/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/Resources/views/cd/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/../app/Resources/views/cd/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/Resources/views/cd/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/../app/Resources/views/cd/new.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/Resources/views/chatmessage/direct_chat_messages.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/../app/Resources/views/chatmessage/direct_chat_messages.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/Resources/views/chatmessage/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/../app/Resources/views/chatmessage/edit.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/Resources/views/chatmessage/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/../app/Resources/views/chatmessage/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/Resources/views/chatmessage/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/../app/Resources/views/chatmessage/new.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/Resources/views/chatmessage/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/../app/Resources/views/chatmessage/show.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/Resources/views/default/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/../app/Resources/views/default/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/Resources/views/enseignant/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/../app/Resources/views/enseignant/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/Resources/views/evenement/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/../app/Resources/views/evenement/edit.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/Resources/views/evenement/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/../app/Resources/views/evenement/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/Resources/views/evenement/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/../app/Resources/views/evenement/new.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/Resources/views/evenement/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/../app/Resources/views/evenement/show.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/Resources/views/livre/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/../app/Resources/views/livre/edit.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/Resources/views/livre/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/../app/Resources/views/livre/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/Resources/views/livre/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/../app/Resources/views/livre/new.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/Resources/views/livre/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/../app/Resources/views/livre/show.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/Resources/views/plat/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/../app/Resources/views/plat/edit.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/Resources/views/plat/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/../app/Resources/views/plat/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/Resources/views/plat/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/../app/Resources/views/plat/new.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/Resources/views/plat/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/../app/Resources/views/plat/show.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/Resources/views/reclamation/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/../app/Resources/views/reclamation/edit.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/Resources/views/reclamation/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/../app/Resources/views/reclamation/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/Resources/views/reclamation/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/../app/Resources/views/reclamation/new.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/Resources/views/reclamation/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/../app/Resources/views/reclamation/show.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/Resources/views/repas/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/../app/Resources/views/repas/edit.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/Resources/views/repas/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/../app/Resources/views/repas/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/Resources/views/repas/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/../app/Resources/views/repas/new.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/Resources/views/repas/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/../app/Resources/views/repas/show.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/config/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../app/config/config.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/config/routing.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../app/config/routing.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/config/security.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../app/config/security.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/config/services.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../app/config/services.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/../composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/ActiviteBundle/Controller/ActiviteController.php" beforeDir="false" afterPath="$PROJECT_DIR$/../src/ActiviteBundle/Controller/ActiviteController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/ActiviteBundle/Controller/DefaultController.php" beforeDir="false" afterPath="$PROJECT_DIR$/../src/ActiviteBundle/Controller/DefaultController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/ActiviteBundle/Entity/Activite.php" beforeDir="false" afterPath="$PROJECT_DIR$/../src/ActiviteBundle/Entity/Activite.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/ActiviteBundle/Entity/InscriptionActivite.php" beforeDir="false" afterPath="$PROJECT_DIR$/../src/ActiviteBundle/Entity/InscriptionActivite.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/ActiviteBundle/Repository/ActiviteRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/../src/ActiviteBundle/Repository/ActiviteRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/ActiviteBundle/Resources/config/routing.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../src/ActiviteBundle/Resources/config/routing.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/ActiviteBundle/Resources/config/routing/activite.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../src/ActiviteBundle/Resources/config/routing/activite.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/ActiviteBundle/Resources/views/Default/index.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/AppBundle/Controller/DefaultController.php" beforeDir="false" afterPath="$PROJECT_DIR$/../src/AppBundle/Controller/DefaultController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/AppBundle/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/../src/AppBundle/Entity/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/BibliothequeBundle/Controller/CDController.php" beforeDir="false" afterPath="$PROJECT_DIR$/../src/BibliothequeBundle/Controller/CDController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/BibliothequeBundle/Controller/LivreController.php" beforeDir="false" afterPath="$PROJECT_DIR$/../src/BibliothequeBundle/Controller/LivreController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/BibliothequeBundle/Entity/BD.php" beforeDir="false" afterPath="$PROJECT_DIR$/../src/BibliothequeBundle/Entity/BD.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/BibliothequeBundle/Entity/CD.php" beforeDir="false" afterPath="$PROJECT_DIR$/../src/BibliothequeBundle/Entity/CD.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/BibliothequeBundle/Entity/Document.php" beforeDir="false" afterPath="$PROJECT_DIR$/../src/BibliothequeBundle/Entity/Document.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/BibliothequeBundle/Entity/Livre.php" beforeDir="false" afterPath="$PROJECT_DIR$/../src/BibliothequeBundle/Entity/Livre.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/BibliothequeBundle/Form/CDType.php" beforeDir="false" afterPath="$PROJECT_DIR$/../src/BibliothequeBundle/Form/CDType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/BibliothequeBundle/Form/LivreType.php" beforeDir="false" afterPath="$PROJECT_DIR$/../src/BibliothequeBundle/Form/LivreType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/BibliothequeBundle/Repository/BDRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/../src/BibliothequeBundle/Repository/BDRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/BibliothequeBundle/Repository/CDRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/../src/BibliothequeBundle/Repository/CDRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/BibliothequeBundle/Repository/LivreRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/../src/BibliothequeBundle/Repository/LivreRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/BibliothequeBundle/Resources/config/routing.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../src/BibliothequeBundle/Resources/config/routing.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/BibliothequeBundle/Resources/config/routing/cd.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../src/BibliothequeBundle/Resources/config/routing/cd.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/BibliothequeBundle/Resources/config/routing/livre.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../src/BibliothequeBundle/Resources/config/routing/livre.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/EvenementBundle/Controller/EvenementController.php" beforeDir="false" afterPath="$PROJECT_DIR$/../src/EvenementBundle/Controller/EvenementController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/EvenementBundle/Entity/Evenement.php" beforeDir="false" afterPath="$PROJECT_DIR$/../src/EvenementBundle/Entity/Evenement.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/EvenementBundle/Entity/Inscription.php" beforeDir="false" afterPath="$PROJECT_DIR$/../src/EvenementBundle/Entity/Inscription.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/EvenementBundle/Form/EvenementType.php" beforeDir="false" afterPath="$PROJECT_DIR$/../src/EvenementBundle/Form/EvenementType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/EvenementBundle/Resources/config/routing/evenement.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../src/EvenementBundle/Resources/config/routing/evenement.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/PaiementBundle/Controller/DefaultController.php" beforeDir="false" afterPath="$PROJECT_DIR$/../src/PaiementBundle/Controller/DefaultController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/PaiementBundle/Entity/Facture.php" beforeDir="false" afterPath="$PROJECT_DIR$/../src/PaiementBundle/Entity/Facture.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/PreinscriptionBundle/Controller/DefaultController.php" beforeDir="false" afterPath="$PROJECT_DIR$/../src/PreinscriptionBundle/Controller/DefaultController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/PreinscriptionBundle/Resources/views/Default/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/../src/PreinscriptionBundle/Resources/views/Default/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/RHBundle/Controller/ClasseController.php" beforeDir="false" afterPath="$PROJECT_DIR$/../src/RHBundle/Controller/ClasseController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/RHBundle/Controller/EnseignantController.php" beforeDir="false" afterPath="$PROJECT_DIR$/../src/RHBundle/Controller/EnseignantController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/RHBundle/Entity/Classe.php" beforeDir="false" afterPath="$PROJECT_DIR$/../src/RHBundle/Entity/Classe.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/RHBundle/Entity/Enfant.php" beforeDir="false" afterPath="$PROJECT_DIR$/../src/RHBundle/Entity/Enfant.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/RHBundle/Entity/Enseignant.php" beforeDir="false" afterPath="$PROJECT_DIR$/../src/RHBundle/Entity/Enseignant.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/RHBundle/Entity/UserParent.php" beforeDir="false" afterPath="$PROJECT_DIR$/../src/RHBundle/Entity/UserParent.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/RHBundle/Form/ClasseType.php" beforeDir="false" afterPath="$PROJECT_DIR$/../src/RHBundle/Form/ClasseType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/RHBundle/Form/EnseignantType.php" beforeDir="false" afterPath="$PROJECT_DIR$/../src/RHBundle/Form/EnseignantType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/RHBundle/Resources/config/routing.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../src/RHBundle/Resources/config/routing.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/RHBundle/Resources/config/routing/enseignant.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../src/RHBundle/Resources/config/routing/enseignant.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/ReclamationBundle/Controller/ReclamationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/../src/ReclamationBundle/Controller/ReclamationController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/ReclamationBundle/Entity/ChatMessage.php" beforeDir="false" afterPath="$PROJECT_DIR$/../src/ReclamationBundle/Entity/ChatMessage.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/ReclamationBundle/Entity/Notification.php" beforeDir="false" afterPath="$PROJECT_DIR$/../src/ReclamationBundle/Entity/Notification.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/ReclamationBundle/Entity/NotificationAdmin.php" beforeDir="false" afterPath="$PROJECT_DIR$/../src/ReclamationBundle/Entity/NotificationAdmin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/ReclamationBundle/Entity/NotificationParent.php" beforeDir="false" afterPath="$PROJECT_DIR$/../src/ReclamationBundle/Entity/NotificationParent.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/ReclamationBundle/Entity/Reclamation.php" beforeDir="false" afterPath="$PROJECT_DIR$/../src/ReclamationBundle/Entity/Reclamation.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/ReclamationBundle/Entity/ReclamationAdmin.php" beforeDir="false" afterPath="$PROJECT_DIR$/../src/ReclamationBundle/Entity/ReclamationAdmin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/ReclamationBundle/Entity/ReclamationParent.php" beforeDir="false" afterPath="$PROJECT_DIR$/../src/ReclamationBundle/Entity/ReclamationParent.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/ReclamationBundle/Entity/Status.php" beforeDir="false" afterPath="$PROJECT_DIR$/../src/ReclamationBundle/Entity/Status.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/RestaurantBundle/Controller/DefaultController.php" beforeDir="false" afterPath="$PROJECT_DIR$/../src/RestaurantBundle/Controller/DefaultController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/RestaurantBundle/Controller/PlatController.php" beforeDir="false" afterPath="$PROJECT_DIR$/../src/RestaurantBundle/Controller/PlatController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/RestaurantBundle/Controller/RepasController.php" beforeDir="false" afterPath="$PROJECT_DIR$/../src/RestaurantBundle/Controller/RepasController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/RestaurantBundle/Entity/InscriptionRepas.php" beforeDir="false" afterPath="$PROJECT_DIR$/../src/RestaurantBundle/Entity/InscriptionRepas.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/RestaurantBundle/Entity/Plat.php" beforeDir="false" afterPath="$PROJECT_DIR$/../src/RestaurantBundle/Entity/Plat.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/RestaurantBundle/Entity/Repas.php" beforeDir="false" afterPath="$PROJECT_DIR$/../src/RestaurantBundle/Entity/Repas.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/RestaurantBundle/Form/PlatType.php" beforeDir="false" afterPath="$PROJECT_DIR$/../src/RestaurantBundle/Form/PlatType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/RestaurantBundle/Form/RepasType.php" beforeDir="false" afterPath="$PROJECT_DIR$/../src/RestaurantBundle/Form/RepasType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/RestaurantBundle/Repository/AARepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/../src/RestaurantBundle/Repository/AARepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/RestaurantBundle/Resources/config/routing/plat.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../src/RestaurantBundle/Resources/config/routing/plat.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/RestaurantBundle/Resources/config/routing/repas.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../src/RestaurantBundle/Resources/config/routing/repas.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/bootstrap.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/colorlib/.sass-cache/21880c0ffe15753a53f8402e9f64e1077e071510/style.scssc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/colorlib/.sass-cache/2866be86c578bb583fbf023501bb9fd24cc3bf22/extend.scssc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/colorlib/.sass-cache/2866be86c578bb583fbf023501bb9fd24cc3bf22/fonts.scssc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/colorlib/.sass-cache/2866be86c578bb583fbf023501bb9fd24cc3bf22/global.scssc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/colorlib/.sass-cache/2866be86c578bb583fbf023501bb9fd24cc3bf22/minxi.scssc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/colorlib/.sass-cache/2866be86c578bb583fbf023501bb9fd24cc3bf22/variables.scssc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/colorlib/.sass-cache/3948936f84e1a30385e73a9be140b58b48c82e15/style.scssc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/colorlib/.sass-cache/643489b018602f15119d8f44aeb7fc79468873a9/main.scssc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/colorlib/.sass-cache/643489b018602f15119d8f44aeb7fc79468873a9/responsive.scssc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/colorlib/.sass-cache/7643c8aa2e335ff5e104bc47d8dd7f1a0693bb39/extend.scssc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/colorlib/.sass-cache/7643c8aa2e335ff5e104bc47d8dd7f1a0693bb39/fonts.scssc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/colorlib/.sass-cache/7643c8aa2e335ff5e104bc47d8dd7f1a0693bb39/global.scssc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/colorlib/.sass-cache/7643c8aa2e335ff5e104bc47d8dd7f1a0693bb39/minxi.scssc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/colorlib/.sass-cache/7643c8aa2e335ff5e104bc47d8dd7f1a0693bb39/variables.scssc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/colorlib/.sass-cache/9dc767a56f3dc2f8a933300255cd2265f13191d4/main.scssc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/colorlib/.sass-cache/9dc767a56f3dc2f8a933300255cd2265f13191d4/responsive.scssc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/colorlib/css/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/colorlib/css/style.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/colorlib/fonts/material-icon/css/material-design-iconic-font.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/colorlib/fonts/material-icon/css/material-design-iconic-font.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/colorlib/fonts/material-icon/fonts/Material-Design-Iconic-Font.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/colorlib/fonts/material-icon/fonts/Material-Design-Iconic-Font.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/colorlib/fonts/material-icon/fonts/Material-Design-Iconic-Font.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/colorlib/fonts/material-icon/fonts/Material-Design-Iconic-Font.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/colorlib/fonts/material-icon/fonts/Material-Design-Iconic-Font.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/colorlib/fonts/poppins/poppins-v5-latin-300.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/colorlib/fonts/poppins/poppins-v5-latin-300.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/colorlib/fonts/poppins/poppins-v5-latin-300.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/colorlib/fonts/poppins/poppins-v5-latin-300.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/colorlib/fonts/poppins/poppins-v5-latin-300.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/colorlib/fonts/poppins/poppins-v5-latin-300italic.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/colorlib/fonts/poppins/poppins-v5-latin-300italic.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/colorlib/fonts/poppins/poppins-v5-latin-300italic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/colorlib/fonts/poppins/poppins-v5-latin-300italic.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/colorlib/fonts/poppins/poppins-v5-latin-300italic.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/colorlib/fonts/poppins/poppins-v5-latin-500.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/colorlib/fonts/poppins/poppins-v5-latin-500.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/colorlib/fonts/poppins/poppins-v5-latin-500.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/colorlib/fonts/poppins/poppins-v5-latin-500.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/colorlib/fonts/poppins/poppins-v5-latin-500.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/colorlib/fonts/poppins/poppins-v5-latin-500italic.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/colorlib/fonts/poppins/poppins-v5-latin-500italic.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/colorlib/fonts/poppins/poppins-v5-latin-500italic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/colorlib/fonts/poppins/poppins-v5-latin-500italic.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/colorlib/fonts/poppins/poppins-v5-latin-500italic.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/colorlib/fonts/poppins/poppins-v5-latin-600.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/colorlib/fonts/poppins/poppins-v5-latin-600.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/colorlib/fonts/poppins/poppins-v5-latin-600.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/colorlib/fonts/poppins/poppins-v5-latin-600.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/colorlib/fonts/poppins/poppins-v5-latin-600.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/colorlib/fonts/poppins/poppins-v5-latin-700.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/colorlib/fonts/poppins/poppins-v5-latin-700.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/colorlib/fonts/poppins/poppins-v5-latin-700.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/colorlib/fonts/poppins/poppins-v5-latin-700.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/colorlib/fonts/poppins/poppins-v5-latin-700.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/colorlib/fonts/poppins/poppins-v5-latin-700italic.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/colorlib/fonts/poppins/poppins-v5-latin-700italic.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/colorlib/fonts/poppins/poppins-v5-latin-700italic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/colorlib/fonts/poppins/poppins-v5-latin-700italic.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/colorlib/fonts/poppins/poppins-v5-latin-700italic.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/colorlib/fonts/poppins/poppins-v5-latin-800.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/colorlib/fonts/poppins/poppins-v5-latin-800.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/colorlib/fonts/poppins/poppins-v5-latin-800.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/colorlib/fonts/poppins/poppins-v5-latin-800.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/colorlib/fonts/poppins/poppins-v5-latin-800.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/colorlib/fonts/poppins/poppins-v5-latin-800italic.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/colorlib/fonts/poppins/poppins-v5-latin-800italic.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/colorlib/fonts/poppins/poppins-v5-latin-800italic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/colorlib/fonts/poppins/poppins-v5-latin-800italic.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/colorlib/fonts/poppins/poppins-v5-latin-800italic.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/colorlib/fonts/poppins/poppins-v5-latin-900.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/colorlib/fonts/poppins/poppins-v5-latin-900.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/colorlib/fonts/poppins/poppins-v5-latin-900.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/colorlib/fonts/poppins/poppins-v5-latin-900.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/colorlib/fonts/poppins/poppins-v5-latin-900.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/colorlib/fonts/poppins/poppins-v5-latin-italic.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/colorlib/fonts/poppins/poppins-v5-latin-italic.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/colorlib/fonts/poppins/poppins-v5-latin-italic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/colorlib/fonts/poppins/poppins-v5-latin-italic.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/colorlib/fonts/poppins/poppins-v5-latin-italic.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/colorlib/fonts/poppins/poppins-v5-latin-regular.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/colorlib/fonts/poppins/poppins-v5-latin-regular.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/colorlib/fonts/poppins/poppins-v5-latin-regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/colorlib/fonts/poppins/poppins-v5-latin-regular.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/colorlib/fonts/poppins/poppins-v5-latin-regular.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/colorlib/fonts/poppins/roboto-condensed-v16-latin-700.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/colorlib/fonts/poppins/roboto-condensed-v16-latin-700.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/colorlib/fonts/poppins/roboto-condensed-v16-latin-700.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/colorlib/fonts/poppins/roboto-condensed-v16-latin-700.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/colorlib/fonts/poppins/roboto-condensed-v16-latin-700.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/colorlib/fonts/poppins/roboto-condensed-v16-latin-700italic.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/colorlib/fonts/poppins/roboto-condensed-v16-latin-700italic.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/colorlib/fonts/poppins/roboto-condensed-v16-latin-700italic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/colorlib/fonts/poppins/roboto-condensed-v16-latin-700italic.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/colorlib/fonts/poppins/roboto-condensed-v16-latin-700italic.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/colorlib/fonts/poppins/roboto-condensed-v16-latin-italic.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/colorlib/fonts/poppins/roboto-condensed-v16-latin-italic.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/colorlib/fonts/poppins/roboto-condensed-v16-latin-italic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/colorlib/fonts/poppins/roboto-condensed-v16-latin-italic.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/colorlib/fonts/poppins/roboto-condensed-v16-latin-italic.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/colorlib/fonts/poppins/roboto-condensed-v16-latin-regular.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/colorlib/fonts/poppins/roboto-condensed-v16-latin-regular.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/colorlib/fonts/poppins/roboto-condensed-v16-latin-regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/colorlib/fonts/poppins/roboto-condensed-v16-latin-regular.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/colorlib/fonts/poppins/roboto-condensed-v16-latin-regular.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/colorlib/images/signin-image.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/colorlib/images/signup-image.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/colorlib/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/colorlib/js/main.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/colorlib/readme.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/colorlib/scss/common/extend.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/colorlib/scss/common/fonts.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/colorlib/scss/common/global.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/colorlib/scss/common/minxi.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/colorlib/scss/common/variables.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/colorlib/scss/layouts/main.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/colorlib/scss/layouts/responsive.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/colorlib/scss/style.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/colorlib/styleStepper.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/colorlib/vendor/jquery/jquery-ui.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/colorlib/vendor/jquery/jquery.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/dist/css/adminlte.css" beforeDir="false" afterPath="$PROJECT_DIR$/../web/dist/css/adminlte.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/dist/css/adminlte.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/../web/dist/css/adminlte.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/dist/css/adminlte.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/../web/dist/css/adminlte.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/dist/css/adminlte.min.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/../web/dist/css/adminlte.min.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/dist/img/prod-1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../web/dist/img/prod-1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/dist/img/prod-2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../web/dist/img/prod-2.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/dist/img/prod-3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../web/dist/img/prod-3.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/dist/img/prod-4.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../web/dist/img/prod-4.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/dist/img/prod-5.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../web/dist/img/prod-5.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/dist/img/user_logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/plugins/datatables-autofill/js/dataTables.autoFill.js" beforeDir="false" afterPath="$PROJECT_DIR$/../web/plugins/datatables-autofill/js/dataTables.autoFill.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/plugins/datatables-buttons/js/buttons.colVis.js" beforeDir="false" afterPath="$PROJECT_DIR$/../web/plugins/datatables-buttons/js/buttons.colVis.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/plugins/datatables-colreorder/js/dataTables.colReorder.js" beforeDir="false" afterPath="$PROJECT_DIR$/../web/plugins/datatables-colreorder/js/dataTables.colReorder.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/plugins/filterizr/ActiveFilter.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../web/plugins/filterizr/ActiveFilter.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/plugins/filterizr/BrowserWindow.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../web/plugins/filterizr/BrowserWindow.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/plugins/filterizr/EventReceiver.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../web/plugins/filterizr/EventReceiver.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/plugins/filterizr/FilterContainer.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../web/plugins/filterizr/FilterContainer.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/plugins/filterizr/FilterContainer/FilterContainer.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../web/plugins/filterizr/FilterContainer/FilterContainer.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/plugins/filterizr/FilterContainer/StyledFilterContainer.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../web/plugins/filterizr/FilterContainer/StyledFilterContainer.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/plugins/filterizr/FilterContainer/index.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../web/plugins/filterizr/FilterContainer/index.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/plugins/filterizr/FilterContainer/styles.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../web/plugins/filterizr/FilterContainer/styles.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/plugins/filterizr/FilterControls.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../web/plugins/filterizr/FilterControls.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/plugins/filterizr/FilterItem.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../web/plugins/filterizr/FilterItem.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/plugins/filterizr/FilterItem/FilterItem.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../web/plugins/filterizr/FilterItem/FilterItem.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/plugins/filterizr/FilterItem/StyledFilterItem.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../web/plugins/filterizr/FilterItem/StyledFilterItem.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/plugins/filterizr/FilterItem/index.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../web/plugins/filterizr/FilterItem/index.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/plugins/filterizr/FilterItem/styles.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../web/plugins/filterizr/FilterItem/styles.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/plugins/filterizr/FilterItems.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../web/plugins/filterizr/FilterItems.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/plugins/filterizr/FilterItems/FilterItems.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../web/plugins/filterizr/FilterItems/FilterItems.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/plugins/filterizr/FilterItems/StyledFilterItems.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../web/plugins/filterizr/FilterItems/StyledFilterItems.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/plugins/filterizr/FilterItems/index.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../web/plugins/filterizr/FilterItems/index.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/plugins/filterizr/Filterizr.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../web/plugins/filterizr/Filterizr.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/plugins/filterizr/Filterizr/Filterizr.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../web/plugins/filterizr/Filterizr/Filterizr.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/plugins/filterizr/Filterizr/index.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../web/plugins/filterizr/Filterizr/index.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/plugins/filterizr/Filterizr/installAsJQueryPlugin.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../web/plugins/filterizr/Filterizr/installAsJQueryPlugin.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/plugins/filterizr/FilterizrElement.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../web/plugins/filterizr/FilterizrElement.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/plugins/filterizr/FilterizrOptions/FilterizrOptions.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../web/plugins/filterizr/FilterizrOptions/FilterizrOptions.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/plugins/filterizr/FilterizrOptions/defaultOptions.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../web/plugins/filterizr/FilterizrOptions/defaultOptions.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/plugins/filterizr/FilterizrOptions/index.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../web/plugins/filterizr/FilterizrOptions/index.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/plugins/filterizr/Spinner/Spinner.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../web/plugins/filterizr/Spinner/Spinner.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/plugins/filterizr/Spinner/StyledSpinner.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../web/plugins/filterizr/Spinner/StyledSpinner.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/plugins/filterizr/Spinner/index.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../web/plugins/filterizr/Spinner/index.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/plugins/filterizr/Spinner/makeSpinner.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../web/plugins/filterizr/Spinner/makeSpinner.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/plugins/filterizr/StyledFilterizrElement.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../web/plugins/filterizr/StyledFilterizrElement.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/plugins/filterizr/StyledFilterizrElements.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../web/plugins/filterizr/StyledFilterizrElements.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/plugins/filterizr/animate.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../web/plugins/filterizr/animate.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/plugins/filterizr/config/cssEasingValuesRegexp.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../web/plugins/filterizr/config/cssEasingValuesRegexp.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/plugins/filterizr/config/filterizrState.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../web/plugins/filterizr/config/filterizrState.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/plugins/filterizr/config/index.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../web/plugins/filterizr/config/index.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/plugins/filterizr/config/layout.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../web/plugins/filterizr/config/layout.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/plugins/filterizr/filterizr.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/../web/plugins/filterizr/filterizr.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/plugins/filterizr/getLayoutPositions.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../web/plugins/filterizr/getLayoutPositions.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/plugins/filterizr/index.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../web/plugins/filterizr/index.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/plugins/filterizr/index.jquery.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../web/plugins/filterizr/index.jquery.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/plugins/filterizr/installAsJQueryPlugin.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../web/plugins/filterizr/installAsJQueryPlugin.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/plugins/filterizr/jquery.filterizr.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/../web/plugins/filterizr/jquery.filterizr.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/plugins/filterizr/layouts/Packer.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../web/plugins/filterizr/layouts/Packer.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/plugins/filterizr/layouts/getHorizontalLayoutPositions.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../web/plugins/filterizr/layouts/getHorizontalLayoutPositions.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/plugins/filterizr/layouts/getPackedLayoutPositions.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../web/plugins/filterizr/layouts/getPackedLayoutPositions.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/plugins/filterizr/layouts/getSameHeightLayoutPositions.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../web/plugins/filterizr/layouts/getSameHeightLayoutPositions.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/plugins/filterizr/layouts/getSameSizeLayoutPosition.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../web/plugins/filterizr/layouts/getSameSizeLayoutPosition.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/plugins/filterizr/layouts/getSameWidthLayoutPositions.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../web/plugins/filterizr/layouts/getSameWidthLayoutPositions.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/plugins/filterizr/layouts/getVerticalLayoutPositions.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../web/plugins/filterizr/layouts/getVerticalLayoutPositions.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/plugins/filterizr/makeLayoutPositions/Packer.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../web/plugins/filterizr/makeLayoutPositions/Packer.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/plugins/filterizr/makeLayoutPositions/index.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../web/plugins/filterizr/makeLayoutPositions/index.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/plugins/filterizr/makeLayoutPositions/makeHorizontalLayoutPositions.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../web/plugins/filterizr/makeLayoutPositions/makeHorizontalLayoutPositions.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/plugins/filterizr/makeLayoutPositions/makeLayoutPositions.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../web/plugins/filterizr/makeLayoutPositions/makeLayoutPositions.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/plugins/filterizr/makeLayoutPositions/makePackedLayoutPositions.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../web/plugins/filterizr/makeLayoutPositions/makePackedLayoutPositions.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/plugins/filterizr/makeLayoutPositions/makeSameHeightLayoutPositions.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../web/plugins/filterizr/makeLayoutPositions/makeSameHeightLayoutPositions.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/plugins/filterizr/makeLayoutPositions/makeSameSizeLayoutPosition.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../web/plugins/filterizr/makeLayoutPositions/makeSameSizeLayoutPosition.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/plugins/filterizr/makeLayoutPositions/makeSameWidthLayoutPositions.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../web/plugins/filterizr/makeLayoutPositions/makeSameWidthLayoutPositions.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/plugins/filterizr/makeLayoutPositions/makeVerticalLayoutPositions.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../web/plugins/filterizr/makeLayoutPositions/makeVerticalLayoutPositions.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/plugins/filterizr/types/index.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../web/plugins/filterizr/types/index.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/plugins/filterizr/types/interfaces/BaseOptions.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../web/plugins/filterizr/types/interfaces/BaseOptions.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/plugins/filterizr/types/interfaces/ContainerLayout.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../web/plugins/filterizr/types/interfaces/ContainerLayout.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/plugins/filterizr/types/interfaces/Destructible.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../web/plugins/filterizr/types/interfaces/Destructible.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/plugins/filterizr/types/interfaces/Dictionary.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../web/plugins/filterizr/types/interfaces/Dictionary.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/plugins/filterizr/types/interfaces/Dimensions.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../web/plugins/filterizr/types/interfaces/Dimensions.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/plugins/filterizr/types/interfaces/Options.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../web/plugins/filterizr/types/interfaces/Options.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/plugins/filterizr/types/interfaces/Position.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../web/plugins/filterizr/types/interfaces/Position.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/plugins/filterizr/types/interfaces/RawOptions.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../web/plugins/filterizr/types/interfaces/RawOptions.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/plugins/filterizr/types/interfaces/RawOptionsCallbacks.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../web/plugins/filterizr/types/interfaces/RawOptionsCallbacks.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/plugins/filterizr/types/interfaces/Resizable.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../web/plugins/filterizr/types/interfaces/Resizable.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/plugins/filterizr/types/interfaces/SpinnerOptions.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../web/plugins/filterizr/types/interfaces/SpinnerOptions.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/plugins/filterizr/types/interfaces/Styleable.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../web/plugins/filterizr/types/interfaces/Styleable.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/plugins/filterizr/types/interfaces/index.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../web/plugins/filterizr/types/interfaces/index.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/plugins/filterizr/utils.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../web/plugins/filterizr/utils.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/plugins/filterizr/utils/allStringsOfArray1InArray2.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../web/plugins/filterizr/utils/allStringsOfArray1InArray2.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/plugins/filterizr/utils/checkOptionForErrors.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../web/plugins/filterizr/utils/checkOptionForErrors.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/plugins/filterizr/utils/debounce.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../web/plugins/filterizr/utils/debounce.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/plugins/filterizr/utils/filterItemArraysHaveSameSorting.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../web/plugins/filterizr/utils/filterItemArraysHaveSameSorting.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/plugins/filterizr/utils/getDataAttributesOfHTMLNode.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../web/plugins/filterizr/utils/getDataAttributesOfHTMLNode.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/plugins/filterizr/utils/getHTMLElement.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../web/plugins/filterizr/utils/getHTMLElement.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/plugins/filterizr/utils/index.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../web/plugins/filterizr/utils/index.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/plugins/filterizr/utils/intersection.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../web/plugins/filterizr/utils/intersection.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/plugins/filterizr/utils/merge.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../web/plugins/filterizr/utils/merge.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/plugins/filterizr/utils/noop.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../web/plugins/filterizr/utils/noop.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/plugins/filterizr/utils/setStyles.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../web/plugins/filterizr/utils/setStyles.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/plugins/filterizr/utils/shuffle.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../web/plugins/filterizr/utils/shuffle.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/plugins/filterizr/utils/sortBy.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../web/plugins/filterizr/utils/sortBy.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/plugins/filterizr/vanilla.filterizr.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/../web/plugins/filterizr/vanilla.filterizr.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/plugins/flot-old/excanvas.js" beforeDir="false" afterPath="$PROJECT_DIR$/../web/plugins/flot-old/excanvas.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/plugins/flot-old/excanvas.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/../web/plugins/flot-old/excanvas.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/plugins/flot-old/jquery.colorhelpers.js" beforeDir="false" afterPath="$PROJECT_DIR$/../web/plugins/flot-old/jquery.colorhelpers.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/plugins/flot-old/jquery.colorhelpers.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/../web/plugins/flot-old/jquery.colorhelpers.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/plugins/flot-old/jquery.flot.canvas.js" beforeDir="false" afterPath="$PROJECT_DIR$/../web/plugins/flot-old/jquery.flot.canvas.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/plugins/flot-old/jquery.flot.canvas.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/../web/plugins/flot-old/jquery.flot.canvas.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/plugins/flot-old/jquery.flot.categories.js" beforeDir="false" afterPath="$PROJECT_DIR$/../web/plugins/flot-old/jquery.flot.categories.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/plugins/flot-old/jquery.flot.categories.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/../web/plugins/flot-old/jquery.flot.categories.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/plugins/flot-old/jquery.flot.crosshair.js" beforeDir="false" afterPath="$PROJECT_DIR$/../web/plugins/flot-old/jquery.flot.crosshair.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/plugins/flot-old/jquery.flot.crosshair.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/../web/plugins/flot-old/jquery.flot.crosshair.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/plugins/flot-old/jquery.flot.errorbars.js" beforeDir="false" afterPath="$PROJECT_DIR$/../web/plugins/flot-old/jquery.flot.errorbars.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/plugins/flot-old/jquery.flot.errorbars.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/../web/plugins/flot-old/jquery.flot.errorbars.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/plugins/flot-old/jquery.flot.fillbetween.js" beforeDir="false" afterPath="$PROJECT_DIR$/../web/plugins/flot-old/jquery.flot.fillbetween.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/plugins/flot-old/jquery.flot.fillbetween.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/../web/plugins/flot-old/jquery.flot.fillbetween.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/plugins/flot-old/jquery.flot.image.js" beforeDir="false" afterPath="$PROJECT_DIR$/../web/plugins/flot-old/jquery.flot.image.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/plugins/flot-old/jquery.flot.image.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/../web/plugins/flot-old/jquery.flot.image.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/plugins/flot-old/jquery.flot.js" beforeDir="false" afterPath="$PROJECT_DIR$/../web/plugins/flot-old/jquery.flot.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/plugins/flot-old/jquery.flot.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/../web/plugins/flot-old/jquery.flot.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/plugins/flot-old/jquery.flot.navigate.js" beforeDir="false" afterPath="$PROJECT_DIR$/../web/plugins/flot-old/jquery.flot.navigate.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/plugins/flot-old/jquery.flot.navigate.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/../web/plugins/flot-old/jquery.flot.navigate.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/plugins/flot-old/jquery.flot.pie.js" beforeDir="false" afterPath="$PROJECT_DIR$/../web/plugins/flot-old/jquery.flot.pie.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/plugins/flot-old/jquery.flot.pie.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/../web/plugins/flot-old/jquery.flot.pie.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/plugins/flot-old/jquery.flot.resize.js" beforeDir="false" afterPath="$PROJECT_DIR$/../web/plugins/flot-old/jquery.flot.resize.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/plugins/flot-old/jquery.flot.resize.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/../web/plugins/flot-old/jquery.flot.resize.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/plugins/flot-old/jquery.flot.selection.js" beforeDir="false" afterPath="$PROJECT_DIR$/../web/plugins/flot-old/jquery.flot.selection.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/plugins/flot-old/jquery.flot.selection.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/../web/plugins/flot-old/jquery.flot.selection.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/plugins/flot-old/jquery.flot.stack.js" beforeDir="false" afterPath="$PROJECT_DIR$/../web/plugins/flot-old/jquery.flot.stack.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/plugins/flot-old/jquery.flot.stack.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/../web/plugins/flot-old/jquery.flot.stack.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/plugins/flot-old/jquery.flot.symbol.js" beforeDir="false" afterPath="$PROJECT_DIR$/../web/plugins/flot-old/jquery.flot.symbol.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/plugins/flot-old/jquery.flot.symbol.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/../web/plugins/flot-old/jquery.flot.symbol.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/plugins/flot-old/jquery.flot.threshold.js" beforeDir="false" afterPath="$PROJECT_DIR$/../web/plugins/flot-old/jquery.flot.threshold.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/plugins/flot-old/jquery.flot.threshold.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/../web/plugins/flot-old/jquery.flot.threshold.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/plugins/flot-old/jquery.flot.time.js" beforeDir="false" afterPath="$PROJECT_DIR$/../web/plugins/flot-old/jquery.flot.time.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/plugins/flot-old/jquery.flot.time.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/../web/plugins/flot-old/jquery.flot.time.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/plugins/jsgrid/demos/basic.html" beforeDir="false" afterPath="$PROJECT_DIR$/../web/plugins/jsgrid/demos/basic.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/plugins/jsgrid/demos/batch-delete.html" beforeDir="false" afterPath="$PROJECT_DIR$/../web/plugins/jsgrid/demos/batch-delete.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/plugins/jsgrid/demos/custom-grid-field.html" beforeDir="false" afterPath="$PROJECT_DIR$/../web/plugins/jsgrid/demos/custom-grid-field.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/plugins/jsgrid/demos/custom-load-indicator.html" beforeDir="false" afterPath="$PROJECT_DIR$/../web/plugins/jsgrid/demos/custom-load-indicator.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/plugins/jsgrid/demos/custom-row-renderer.html" beforeDir="false" afterPath="$PROJECT_DIR$/../web/plugins/jsgrid/demos/custom-row-renderer.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/plugins/jsgrid/demos/custom-view.html" beforeDir="false" afterPath="$PROJECT_DIR$/../web/plugins/jsgrid/demos/custom-view.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/plugins/jsgrid/demos/data-manipulation.html" beforeDir="false" afterPath="$PROJECT_DIR$/../web/plugins/jsgrid/demos/data-manipulation.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/plugins/jsgrid/demos/external-pager.html" beforeDir="false" afterPath="$PROJECT_DIR$/../web/plugins/jsgrid/demos/external-pager.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/plugins/jsgrid/demos/loading-by-page.html" beforeDir="false" afterPath="$PROJECT_DIR$/../web/plugins/jsgrid/demos/loading-by-page.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/plugins/jsgrid/demos/localization.html" beforeDir="false" afterPath="$PROJECT_DIR$/../web/plugins/jsgrid/demos/localization.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/plugins/jsgrid/demos/odata-service.html" beforeDir="false" afterPath="$PROJECT_DIR$/../web/plugins/jsgrid/demos/odata-service.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/plugins/jsgrid/demos/sorting.html" beforeDir="false" afterPath="$PROJECT_DIR$/../web/plugins/jsgrid/demos/sorting.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/plugins/jsgrid/demos/static-data.html" beforeDir="false" afterPath="$PROJECT_DIR$/../web/plugins/jsgrid/demos/static-data.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/plugins/jsgrid/demos/validation.html" beforeDir="false" afterPath="$PROJECT_DIR$/../web/plugins/jsgrid/demos/validation.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/plugins/jszip/jszip.js" beforeDir="false" afterPath="$PROJECT_DIR$/../web/plugins/jszip/jszip.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/plugins/jszip/jszip.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/../web/plugins/jszip/jszip.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/../web/style.css" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -12,6 +453,9 @@
     <execution>
       <executable />
     </execution>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -86,9 +530,21 @@
       <path value="$PROJECT_DIR$/vendor/phpoption/phpoption" />
       <path value="$PROJECT_DIR$/vendor/phpcollection/phpcollection" />
       <path value="$PROJECT_DIR$/vendor/knplabs/knp-components" />
+      <path value="$PROJECT_DIR$/vendor/knplabs/knp-snappy" />
+      <path value="$PROJECT_DIR$/vendor/knplabs/knp-snappy-bundle" />
+      <path value="$PROJECT_DIR$/vendor/toiba/fullcalendar-bundle" />
+      <path value="$PROJECT_DIR$/vendor/omnipay/paypal" />
+      <path value="$PROJECT_DIR$/vendor/omnipay/common" />
+      <path value="$PROJECT_DIR$/vendor/php-http/discovery" />
+      <path value="$PROJECT_DIR$/vendor/php-http/message" />
+      <path value="$PROJECT_DIR$/vendor/php-http/message-factory" />
+      <path value="$PROJECT_DIR$/vendor/clue/stream-filter" />
+      <path value="$PROJECT_DIR$/vendor/psr/http-message" />
+      <path value="$PROJECT_DIR$/vendor/moneyphp/money" />
     </include_path>
   </component>
   <component name="ProjectId" id="1YLS8f5K9BNeQvcPR0tNzs8kPou" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -96,8 +552,24 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/app/Resources/views" />
+      <recent name="$PROJECT_DIR$/app/Resources/views/default" />
+      <recent name="$PROJECT_DIR$/web/images" />
+      <recent name="$PROJECT_DIR$/src" />
+    </key>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -110,11 +582,32 @@
       <option name="presentableId" value="Default" />
       <updated>1582720223259</updated>
       <workItem from="1582720224715" duration="48000" />
-      <workItem from="1582720772177" duration="265000" />
+      <workItem from="1582720772177" duration="1024000" />
+      <workItem from="1582723576940" duration="2013000" />
+      <workItem from="1582725616779" duration="2632000" />
+      <workItem from="1582728264495" duration="1271000" />
+      <workItem from="1582729553205" duration="379000" />
+      <workItem from="1582729954994" duration="3523000" />
+      <workItem from="1582733495458" duration="32483000" />
+      <workItem from="1582795135673" duration="5741000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="706" y="207" width="568" height="697" key="#com.intellij.ide.util.MemberChooser" timestamp="1582764784966">
+      <screen x="71" y="34" width="1849" height="1046" />
+    </state>
+    <state x="706" y="207" width="568" height="697" key="#com.intellij.ide.util.MemberChooser/71.34.1849.1046@71.34.1849.1046" timestamp="1582764784966" />
+    <state x="725" y="257" width="530" height="598" key="FileChooserDialogImpl" timestamp="1582745913352">
+      <screen x="71" y="34" width="1849" height="1046" />
+    </state>
+    <state x="725" y="257" width="530" height="598" key="FileChooserDialogImpl/71.34.1849.1046@71.34.1849.1046" timestamp="1582745913352" />
+    <state x="550" y="345" key="com.intellij.ide.util.TipDialog" timestamp="1582733499133">
+      <screen x="71" y="34" width="1849" height="1046" />
+    </state>
+    <state x="550" y="345" key="com.intellij.ide.util.TipDialog/71.34.1849.1046@71.34.1849.1046" timestamp="1582733499133" />
   </component>
 </project>

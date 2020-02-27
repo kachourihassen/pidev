@@ -1,0 +1,28 @@
+bd_index:
+  path:     /
+  defaults: { _controller: "BibliothequeBundle:BD:index" }
+  methods:  GET
+
+bd_show:
+  path:     /{id}/show
+  defaults: { _controller: "BibliothequeBundle:BD:show" }
+  methods:  GET
+
+bd_new:
+  path:     /new
+  defaults: { _controller: "BibliothequeBundle:BD:new" }
+  methods:  [GET, POST]
+
+bd_edit:
+  path:     /{id}/edit
+  defaults: { _controller: "BibliothequeBundle:BD:edit" }
+  methods:  [GET, POST]
+
+bd_delete:
+  path:     /{id}/delete
+  defaults: { _controller: "BibliothequeBundle:BD:delete" }
+  methods:  DELETE
+consulterbd:
+  path:     /consulterbd
+  defaults: { _controller: "BibliothequeBundle:BD:consulterbd" }
+  methods:  GET

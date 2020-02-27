@@ -6,6 +6,11 @@ bibliotheque_livre:
     resource: "@BibliothequeBundle/Resources/config/routing/livre.yml"
     prefix:   /livre
 
+
+bibliotheque_bd:
+    resource: "@BibliothequeBundle/Resources/config/routing/bd.yml"
+    prefix:   /bd
+
 bibliotheque_homepage:
     path:     /
     defaults: { _controller: BibliothequeBundle:Default:index }

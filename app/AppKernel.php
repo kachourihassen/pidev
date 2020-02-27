@@ -36,6 +36,8 @@ class AppKernel extends Kernel
             new PreinscriptionBundle\PreinscriptionBundle(),
 
             new Knp\Bundle\PaginatorBundle\KnpPaginatorBundle(),
+            new Knp\Bundle\SnappyBundle\KnpSnappyBundle(),
+            new Toiba\FullCalendarBundle\FullCalendarBundle()
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

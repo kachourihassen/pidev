@@ -194,37 +194,5 @@ class UserParent extends User
         return $this->enfants;
     }
 
-    /**
-     * Add reclamation
-     *
-     * @param \ReclamationBundle\Entity\Reclamation $reclamation
-     *
-     * @return UserParent
-     */
-    public function addReclamation(\ReclamationBundle\Entity\Reclamation $reclamation)
-    {
-        $this->reclamations[] = $reclamation;
 
-        return $this;
-    }
-
-    /**
-     * Remove reclamation
-     *
-     * @param \ReclamationBundle\Entity\Reclamation $reclamation
-     */
-    public function removeReclamation(\ReclamationBundle\Entity\Reclamation $reclamation)
-    {
-        $this->reclamations->removeElement($reclamation);
-    }
-
-    /**
-     * Get reclamations
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getReclamations()
-    {
-        return $this->reclamations;
-    }
 }

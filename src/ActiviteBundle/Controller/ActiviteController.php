@@ -3,8 +3,15 @@
 namespace ActiviteBundle\Controller;
 
 use ActiviteBundle\Entity\Activite;
+use ActiviteBundle\Entity\InscriptionActivite;
+use PaiementBundle\Entity\Facture;
+use Payment\Payment;
+use RHBundle\Entity\UserParent;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\Console\Logger\ConsoleLogger;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
+
 
 /**
  * Activite controller.
@@ -105,6 +112,58 @@ class ActiviteController extends Controller
 
         return $this->redirectToRoute('activite_index');
     }
+    public function act_parentAction(Request $request)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $activites = $this->getDoctrine()->getRepository(Activite::class)->findAll();
+        $user = $this->container->get('security.token_storage')->getToken()->getUser();
+        $parent = $this->getDoctrine()->getRepository(UserParent::class)->find($user->getId());
+
+        return $this->render('activite/parent_act.html.twig', array(
+            'activites' => $activites,'parent' => $parent
+        ));
+    }
+    ///participer a un event action
+    public function activite_partAction(Request $request,$id){
+        $em = $this->getDoctrine()->getManager();
+        $activites = $this->getDoctrine()->getRepository(Activite::class)->findAll();
+        $user = $this->container->get('security.token_storage')->getToken()->getUser();
+        $parent = $this->getDoctrine()->getRepository(UserParent::class)->find($user->getId());
+        if($request->getMethod() == Request::METHOD_POST) {
+            foreach ($parent->getEnfants() as $e) {
+
+                if ($request->request->get($e->getId()) == 'on') {
+                    $insc = new InscriptionActivite();
+                    $fact = new Facture();
+                    $em = $this->getDoctrine()->getManager();
+                   // $id_act = $request->request->get('act');
+                    //var_dump($id);
+                    // die();
+                    $monActivite = $this->getDoctrine()->getRepository(Activite::class)->find($id);
+                    $insc->setEnfant($e);
+                    $insc->setActivite($monActivite);
+                    $user = $this->get('security.token_storage')->getToken()->getUser();
+                    $fact->setParent($user);
+                    $fact->setMontant($monActivite->getPrix());
+
+                    $fact->setTitre($monActivite->getNom());
+                    $fact->setTitre('teste');
+                    $fact->setDescription('facture pou activite');
+                    $fact->setPayee(0);
+                    $fact->setDateCreation(new \DateTime());
+                    $insc->setFacture($fact);
+                    $em->persist($fact);
+                    $em->persist($insc);
+
+                };
+                $em->flush();
+
+            }
+        }
+        return $this->render('activite/activite_part.html.twig', array(
+            'parent' => $parent
+        ));
+    }
 
     /**
      * Creates a form to delete a activite entity.
@@ -120,5 +179,28 @@ class ActiviteController extends Controller
             ->setMethod('DELETE')
             ->getForm()
         ;
+    }
+
+    public function filterAction(Request $request)
+    {
+
+        $nom = $request->get('nom');
+        $em = $this->getDoctrine()->getManager();
+
+        $activite = $em->getRepository('ActiviteBundle:Activite')->findName($nom);
+
+        $jsondata = array();
+        $idx = 0;
+        foreach ($activite as $f) {
+            $temp = array('id'=>$f->getId(),'categorie' => $f->getCategorie(), 'nom' => $f->getNom(), 'prix' => $f->getPrix(), 'description' => $f->getDescription(),
+            );
+
+            $jsondata[$idx++] = $temp;
+        }
+        return new JsonResponse($jsondata);
+
+        /* return $this->render('representant/index.html.twig', array(
+             'representants' => $representants,
+         ));*/
     }
 }

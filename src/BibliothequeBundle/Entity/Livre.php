@@ -2,7 +2,12 @@
 
 namespace BibliothequeBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
+use Doctrine\Common\Collections\Collection;
+use Symfony\Component\HttpFoundation\File\File;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Livre
@@ -19,7 +24,6 @@ class Livre extends Document
      * @ORM\Column(name="auteur", type="string", length=255)
      */
     private $auteur;
-
 
     /**
      * Set auteur
@@ -44,4 +48,11 @@ class Livre extends Document
     {
         return $this->auteur;
     }
+
+    public function __toString(){
+
+        return "Livre" ;
+    }
+
+
 }

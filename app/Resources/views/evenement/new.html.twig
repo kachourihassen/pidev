@@ -1,16 +1,17 @@
 {% extends 'base.html.twig' %}
-
 {% block body %}
-    <h1>Evenement creation</h1>
+    <div class="card card-info">
+        <label class="card-header" >Ajouter un evenement</label>
+    </div>
 
     {{ form_start(form) }}
-        {{ form_widget(form) }}
-        <input type="submit" value="Create" />
+    {{ form_widget(form) }}
+    <input type="submit"  class="btn btn-warning" value="Create" />
     {{ form_end(form) }}
 
-    <ul>
-        <li>
-            <a href="{{ path('evenement_index') }}">Back to the list</a>
-        </li>
-    </ul>
+    <div class="col-md-2">
+        <div class="card-body pad table-responsive">
+            <a  class="btn btn-block btn-outline-secondary" href="{{ path('evenement_index') }}">Back to the list</a>
+        </div>
+    </div>
 {% endblock %}

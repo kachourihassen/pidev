@@ -1,40 +1,53 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Plat</h1>
 
-    <table>
+
+
+    <div class="card card-warning">
+        <label class="card-header" >Plat </label>
+    </div>
+
+    <table class="table table-bordered">
         <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ plat.id }}</td>
-            </tr>
-            <tr>
-                <th>Nom</th>
-                <td>{{ plat.nom }}</td>
-            </tr>
-            <tr>
-                <th>Prix</th>
-                <td>{{ plat.prix }}</td>
-            </tr>
-            <tr>
-                <th>Description</th>
-                <td>{{ plat.description }}</td>
-            </tr>
+        <tr>
+            <th style="width:9px">Id</th>
+            <td>{{ plat.id }}</td>
+        </tr>
+        <tr>
+            <th>Nom</th>
+            <td>{{ plat.nom }}</td>
+        </tr>
+        <tr>
+            <th>Description</th>
+            <td>{{ plat.description }}</td>
+        </tr>
+        <tr>
+            <th>Prix</th>
+            <td>{{ plat.prix }}</td>
+        </tr>
+
+
+
         </tbody>
     </table>
 
     <ul>
-        <li>
-            <a href="{{ path('plat_index') }}">Back to the list</a>
-        </li>
-        <li>
-            <a href="{{ path('plat_edit', { 'id': plat.id }) }}">Edit</a>
-        </li>
-        <li>
-            {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
-            {{ form_end(delete_form) }}
-        </li>
+        <div class="col-md-2">
+            <div class="card-body pad table-responsive">
+                <a  class="btn btn-block btn-outline-secondary" href="{{ path('plat_index') }}">Back to the list</a>
+            </div>
+        </div>
+
+        <a class="btn btn-warning" href="{{ path('plat_edit', { 'id': plat.id }) }}"><i class="fas fa-pen"></i></a>
+
+        <div class="col-md-2">
+            <div class="card-body pad table-responsive">
+                {{ form_start(delete_form) }}
+                <input type="submit" class="btn btn-block btn-outline-danger" class="fas fa-trash" value="Delete" />
+                {{ form_end(delete_form) }}
+            </div>
+        </div>
+
     </ul>
 {% endblock %}

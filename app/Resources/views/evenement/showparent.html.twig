@@ -1,0 +1,226 @@
+{% block body %}
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <title>Nursery a Society and People </title>
+        <!-- custom-theme -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="keywords" content="Nursery Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+
+
+        <link href="{{ asset('plu')}}" rel="stylesheet" type="text/css" media="all" />
+        <link href="{{ asset('style.css')}}" rel="stylesheet" type="text/css" media="all" />
+        <!-- js -->
+        <script type="text/javascript" src="{{ asset('/plugins/bootstrap/js/bootstrap.bundle.min.js' )}}" ></script>
+
+        <!-- //js -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+        <link href="{{ asset('lib/bootstrap/js/popuo-box.css' )}}" rel="stylesheet" type="text/css" media="all" />
+        <!-- font-awesome-icons -->
+        <link href="{{ asset('lib/font-awesome/css/font-awesome.css' )}}" rel="stylesheet">
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        <!-- //font-awesome-icons -->
+
+    </head>
+        <style>
+            .modal-backdrop{
+                opacity: 0.5 !important;
+            }
+        </style>
+    <body>
+
+    <!-- header -->
+
+
+    <div class="w3_navigation">
+        <div class="container">
+            <nav class="navbar navbar-default">
+                <div class="navbar-header navbar-left">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <div class="w3_navigation_pos">
+                        <h1><a href="index.html"><span>Nursery</span><i>baby home</i></a></h1>
+                    </div>
+                </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse " id="bs-example-navbar-collapse-1">
+                    <nav class="menu menu--miranda">
+                        <ul class="nav navbar-nav menu__list">
+                            <li class="menu__item menu__item--current"><a href="index.html" class="menu__link">Home</a></li>
+                            <li class="menu__item"><a href="{{ path('showparentevent_show' )}}" class="icon-tasks">Nos Events</a></li>
+                            <li class="menu__item"><a href="#about" class="scroll menu__link">Nos Plats</a></li>
+                            <li class="menu__item"><a href="#programs" class="scroll menu__link">programs</a></li>
+                            <li class="menu__item"><a href="#work" class="scroll menu__link">Notre Biblio</a></li>
+                            <li class="menu__item"><a href="#team" class="scroll menu__link">Team</a></li>
+
+                        </ul>
+                    </nav>
+                </div>
+            </nav>
+        </div>
+
+    </div>
+    <!-- //header -->
+    <!-- pop-up-box -->
+    <!-- hassen -->
+
+    <div id="small-dialog1" class="mfp-hide w3ls_small_dialog wthree_pop">
+        <h3>Sign Up</h3>
+        <div class="agileits_modal_body">
+            <form action="#" method="post">
+                <h4>Profile information :</h4>
+                <div class="agileits_w3layouts_user">
+                    <i class="fa fa-user" aria-hidden="true"></i>
+                    <input type="text" name="Name" placeholder="First Name" required="">
+                </div>
+                <div class="agileits_w3layouts_user">
+                    <i class="fa fa-user" aria-hidden="true"></i>
+                    <input type="text" name="Name" placeholder="Last Name" required="">
+                </div>
+                <div class="agileinfo_subscribe">
+                    <div class="check">
+                        <label class="checkbox"><input type="checkbox" name="checkbox"><i> </i>subscribe to newsletter</label>
+                    </div>
+                </div>
+                <h4>Login information :</h4>
+                <div class="agileits_w3layouts_user">
+                    <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                    <input type="email" name="Email" placeholder="Email" required="">
+                </div>
+                <div class="agileits_w3layouts_user agileits_w3layouts_user_agileits">
+                    <i class="fa fa-key" aria-hidden="true"></i>
+                    <input type="password" name="Password" placeholder="Password" required="">
+                </div>
+                <div class="agileits_w3layouts_user">
+                    <i class="fa fa-key" aria-hidden="true"></i>
+                    <input type="password" name="Password" placeholder="Confirm Password" required="">
+                </div>
+                <div class="agileinfo_subscribe">
+                    <div class="check">
+                        <label class="checkbox"><input type="checkbox" name="checkbox"><i> </i>i accept the terms and conditions</label>
+                    </div>
+                </div>
+                <input type="submit" value="Register">
+            </form>
+            <h5>Already a member <a href="#small-dialog" class="play-icon popup-with-zoom-anim">Sign In</a></h5>
+        </div>
+    </div>
+    <!-- //pop-up-box -->
+
+
+
+
+
+    <!-- events -->
+
+    <div id="events" class="events">
+        <div class="container">
+            <h3 class="w3_agileits_head">Liste Des <span class="w3_child">E</span><span class="w3_child1">v</span><span class="w3_child2">e</span><span class="w3_child4">n</span><span class="w3_child">ement</span><span class="w3_child1">s</span></h3>
+            {% for evenement in evenement  %}
+            <div class="agile_banner_bottom_grids">
+                <div class="agile_events_grid">
+                    <form>
+                    <img src="{{ asset('images/')}}{{ evenement.path }}" alt=" " class="img-responsive" />
+                    <div class="agile_events_grid_pos agile_events_grid_pos1">
+                        <h5><span>{{ evenement.dateDeb|date('Y-m-d') }} / {{ evenement.dateFin|date('Y-m-d') }}</span></h5>
+                        <h4><a>{{ evenement.titre  }}</a></h4>
+                        <p>{{ evenement.description }}</p>
+                        <h2 >Prix:{{ evenement.prix }}</h2>
+                        <i class="material-icons">{{ evenement.lieux }}</i>
+                        <div class="agile_banner_bottom_grid_pos">
+                            <a  data-toggle="modal" data-target="#{{ evenement.id }}" href="#" >participer</a>
+                        </div>
+                        <div class="modal" id="{{ evenement.id }}">
+                            <form method="post">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h4 class="modal-title">liste des enfants {{ app.user.username  }} </h4>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p>liste des enfants</p>
+                                            {% for e in parent.enfants %}
+                                                <div>
+                                                    <input type="checkbox" id="{{ e.id }}"  name="{{ evenement.id }}" value="{{ e.id }}">
+                                                    <label>{{ e.nom }}</label>
+                                                </div>
+                                            {% endfor %}
+
+                                        </div>
+                                        <div class="modal-footer justify-content-between">
+                                            <input hidden value="{{ evenement.id }}" name="ev" >
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                            <input  data-url="{{ (path('showparentevent_show')) }}"  type="submit" class="btn btn-primary" >
+                                        </div>
+
+                                    </div>
+                                    <!-- /.modal-content -->
+
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    </form>
+                </div>
+                {% endfor %}
+                <script>
+
+
+                    $(document).on('change', 'input[type="checkbox"]',function () {
+
+                        var enfant = this.value ;
+                        var event = this.name ;
+                        if (this.checked) {// check if the checkbox is checked
+
+                            $.ajax({
+                                url:'{{( path('showparentevent_show') )}}',
+                                type: "POST",
+                                dataType: "json",
+                                data: {
+                                    "some_var_name": "some_var_value" ,
+                                    "enfant" : enfant ,
+                                    "event" : event ,
+                                },
+                                async: true,
+                                success: function (data)
+                                {
+                                    console.log(data);
+                                    //alert(data);
+                                }
+                            });
+                        }
+                    });
+                    {% for e in parent.enfants %}
+                    {% endfor %}
+                </script>
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+    <!-- //events -->
+
+    <!-- contact-effect -->
+
+    <!-- //here ends scrolling icon -->
+    <!-- for bootstrap working -->
+    <script src="{{ asset('lib/bootstrap/js/bootstrap.js')}}"></script>
+    <!-- //for bootstrap working -->
+    </body>
+    </html>
+
+
+{% endblock %}

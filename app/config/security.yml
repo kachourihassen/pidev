@@ -18,7 +18,11 @@ security:
             user_checker: security.user_checker
             form_login:
                 provider: fos_userbundle
+
+                use_referer: true
+                default_target_path: /verif
                 csrf_token_generator: security.csrf.token_manager
+
 
             logout:       true
             anonymous:    true
@@ -29,7 +33,7 @@ security:
         - { path: ^/register, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/RH, role: ROLE_USER   }
-        - { path: ^/, role: ROLE_PARENT  }
+        - { path: ^/profile, role: ROLE_PARENT  }
         - { path: ^/, role: ROLE_ENSEIGNANT  }
 
 

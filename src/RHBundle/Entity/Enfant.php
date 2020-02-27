@@ -9,7 +9,7 @@ use Doctrine\ORM\Mapping\JoinTable;
 use Doctrine\ORM\Mapping\ManyToMany;
 use Doctrine\ORM\Mapping\ManyToOne;
 use Doctrine\ORM\Mapping\OneToMany;
-
+use Symfony\Component\Validator\Constraints as Assert;
 /**
  * Enfant
  * @ORM\Entity
@@ -30,32 +30,30 @@ class Enfant
     /**
      * @var string
      *
-     * @ORM\Column(name="nom", type="string", length=255)
+     * @ORM\Column(name="nom", type="string", length=255 , nullable=false)
      */
     private $nom;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="prenom", type="string", length=255)
+     * @ORM\Column(name="prenom", type="string", length=255 ,nullable=false)
      */
     private $prenom;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="sexe", type="string", length=255)
+     * @ORM\Column(name="sexe", type="string", length=255 ,nullable=false)
      */
     private $sexe;
 
     /**
- * @var \DateTime
- *
- * @ORM\Column(name="date_naissance" , type="datetime")
- */
+     * @var \DateTime
+     *  @Assert\GreaterThan("today")
+     * @ORM\Column(name="date_naissance" , type="datetime")
+     */
     private $dateNaissance;
-
-
     /**
      * @ManyToOne(targetEntity="RHBundle\Entity\Classe")
      * @JoinColumn(name="classe", referencedColumnName="id")
@@ -78,6 +76,7 @@ class Enfant
      * @OneToMany(targetEntity="RestaurantBundle\Entity\InscriptionRepas", mappedBy="enfant")
      */
     private $inscriptionsRepas;
+
     /**
      * One product has many features. This is the inverse side.
      * @OneToMany(targetEntity="EvaluationBundle\Entity\Note", mappedBy="enfant")

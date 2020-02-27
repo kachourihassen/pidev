@@ -9,3 +9,7 @@ rh_classe:
 rh_homepage:
     path:     /
     defaults: { _controller: RHBundle:Default:index }
+
+rh_userparent:
+    resource: "@RHBundle/Resources/config/routing/userparent.yml"
+    prefix:   /userparent

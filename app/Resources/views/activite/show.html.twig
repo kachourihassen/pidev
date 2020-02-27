@@ -1,9 +1,9 @@
-{% extends 'base.html.twig' %}
+{% extends 'admin.html.twig' %}
 
 {% block body %}
     <h1>Activite</h1>
 
-    <table>
+    <table class="table table-bordered">
         <tbody>
             <tr>
                 <th>Id</th>
@@ -29,16 +29,16 @@
     </table>
 
     <ul>
-        <li>
-            <a href="{{ path('activite_index') }}">Back to the list</a>
-        </li>
-        <li>
-            <a href="{{ path('activite_edit', { 'id': activite.id }) }}">Edit</a>
-        </li>
-        <li>
+
+            <a class="btn btn-info" href="{{ path('activite_index') }}">Back to the list</a>
+
+
+            <a  class="btn btn-warning" href="{{ path('activite_edit', { 'id': activite.id }) }}">Edit <i class="fas fa-pen"></i></a>
+
+
             {{ form_start(delete_form) }}
                 <input type="submit" value="Delete">
             {{ form_end(delete_form) }}
-        </li>
+
     </ul>
 {% endblock %}

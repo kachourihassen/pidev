@@ -1,9 +1,12 @@
-{% extends 'base.html.twig' %}
+{% extends 'admin.html.twig' %}
 
 {% block body %}
-    <h1>Activites list</h1>
 
-    <table>
+    <div class="card card-warning">
+        <label class="card-header" >Activites list</label>
+    </div>
+
+    <table class="table table-bordered">
         <thead>
             <tr>
                 <th>Id</th>
@@ -24,12 +27,12 @@
                 <td>{{ activite.description }}</td>
                 <td>
                     <ul>
-                        <li>
-                            <a href="{{ path('activite_show', { 'id': activite.id }) }}">show</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('activite_edit', { 'id': activite.id }) }}">edit</a>
-                        </li>
+
+                            <a class="btn btn-info" href="{{ path('activite_show', { 'id': activite.id }) }}">show<i class="fas fa-eye"></i></a>
+
+
+                            <a class="btn btn-warning"  href="{{ path('activite_edit', { 'id': activite.id }) }}">edit <i class="fas fa-pen"></i></a>
+
                     </ul>
                 </td>
             </tr>
@@ -38,8 +41,7 @@
     </table>
 
     <ul>
-        <li>
-            <a href="{{ path('activite_new') }}">Create a new activite</a>
-        </li>
+            <a CLASS="btn btn-block btn-primary" href="{{ path('activite_new') }}">Create a new activite</i></a>
+
     </ul>
 {% endblock %}

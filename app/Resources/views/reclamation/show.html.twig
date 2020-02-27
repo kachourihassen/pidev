@@ -1,5 +1,6 @@
-{% extends 'base.html.twig' %}
-
+{% extends is_granted('ROLE_ADMIN')
+    ? 'base.html.twig'
+    : 'ense.html.twig' %}
 {% block body %}
     <div class="card card-warning">
         <label class="card-header" >Reclamations </label>
@@ -23,13 +24,19 @@
                 <th>Description</th>
                 <td>{{ reclamation.description }}</td>
             </tr>
+            {% if reclamation.status is defined %}
             <tr>
                 <th>Status</th>
                 <td>{{ reclamation.status }}</td>
             </tr>
+            {% endif %}
             <tr>
                 <th>Reponse</th>
+                {% if reclamation.reponse is defined and reclamation.reponse is not empty %}
                 <td>{{ reclamation.reponse }}</td>
+                {%  else %}
+                    <td>Pas de reponse !</td>
+                {% endif %}
             </tr>
         </tbody>
     </table>

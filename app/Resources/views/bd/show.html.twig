@@ -1,0 +1,64 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="card card-warning">
+        <label class="card-header" >tous les bandes déssinées </label>
+    </div>
+
+    <table class="table table-bordered">
+        <tbody>
+        <tr>
+            <th style="width:9px">Id</th>
+            <td>{{ bd.id }}</td>
+        </tr>
+        <tr>
+            <th>Titre</th>
+            <td>{{ bd.titre }}</td>
+        </tr>
+        <tr>
+            <th>Auteur</th>
+            <td>{{ bd.auteur }}</td>
+        </tr>
+        <tr>
+            <th>Description</th>
+            <td>{{ bd.description }}</td>
+        </tr>
+        <tr>
+            <th>Prix</th>
+            <td>{{ bd.prix }}</td>
+        </tr>
+        <tr>
+            <th>langue</th>
+            <td>{{ bd.langue }}</td>
+        </tr>
+        <tr>
+            <th>Date publication</th>
+            <td>{% if bd.datePub %}{{ bd.datePub|date('Y-m-d H:i:s') }}{% endif %}</td>
+        </tr>
+
+        <tr>
+            <th>Image</th>
+            <td class="patient-img sorting_1" style=" width: 10px; height: 10px">
+                <img src="{{ asset('/images/') }}{{ bd.path }}"  style=" width: 20px; height: 20px" alt="">
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <ul>
+        <div class="col-md-2">
+            <div class="card-body pad table-responsive">
+                <a  class="btn btn-block btn-outline-secondary" href="{{ path('bd_index') }}">Back to the list</a>
+            </div>
+        </div>
+
+        <a class="btn btn-warning" href="{{ path('bd_edit', { 'id': bd.id }) }}"><i class="fas fa-pen"></i></a>
+
+        <div class="col-md-2">
+            <div class="card-body pad table-responsive">
+                {{ form_start(delete_form) }}
+                <input type="submit" class="btn btn-block btn-outline-danger" class="fas fa-trash" value="Supprimer" />
+                {{ form_end(delete_form) }}
+            </div>
+        </div>
+    </ul>
+{% endblock %}

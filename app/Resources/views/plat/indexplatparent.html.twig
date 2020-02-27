@@ -1,0 +1,145 @@
+{% extends 'indexParent.html.twig' %}
+{% block body   %}
+
+
+
+
+    <div id="events" class="events">
+        <div class="container">
+
+        </div>
+    </div>
+
+    <div id="about" class="banner-bottom">
+        <div class="container">
+            <h3>a <span class="w3_child">c</span><span class="w3_child1">h</span><span class="w3_child2">i</span><span class="w3_child3">l</span><span class="w3_child4">d</span>'s life is like a piece of paper on which every person leaves a mark</h3>
+            <p class="w3_agile_elit">On vous presente nos plats .</p>
+            <div class="agile_banner_bottom_grids">
+
+                {% for plat in plats %}
+                <div class="col-md-3 agile_banner_bottom_grid">
+                    <div class="view view-first">
+                          <img src="{{ asset('images/fond.png')}}" alt=" " class="img-responsive" />
+                        <div class="mask">
+                            <h5>{{ plat.nom }} </h5>
+                            <p> Description :{{ plat.description }}.</p>
+                            <p> Date :{{ plat.heure|date('Y-m-d H:i:s') }}.</p>
+                            <a href="#" data-toggle="modal" data-target="#{{ plat.id }}">voir mes plats</a>
+                        </div>
+                    </div>
+                    <!-- //houni badalt  -->
+                    <div class="agile_banner_bottom_grid_pos">
+                        <h4><a href="#" data-toggle="modal" data-target="#ins{{ plat.id }}">s'inscrire</a> </h4>
+                    </div>
+                </div>
+
+
+
+                    <!-- bootstrap-pop-up   inscri-->
+                    <div class="modal" id="ins{{ plat.id }}">
+                        <form method="post">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h4 class="modal-title">MR  {{ app.user.username  }} tu peux choisir tes enfants</h4>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>liste des enfants</p>
+                                        {% for e in parent.enfants %}
+                                            <div>
+                                                <input type="checkbox" id="{{ e.id }}"  value="{{ e.id }}" name="{{ plat.id }}">
+                                                <label>{{ e.nom }}</label>
+                                            </div>
+                                        {% endfor %}
+
+                                    </div>
+                                    <div class="modal-footer justify-content-between">
+                                        <input hidden value="{{ plat.id }}" name="plat" >
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                        <div class="agile_banner_bottom_grid_pos">
+                                            <input  data-url="{{ (path('inscription')) }}"  type="submit" class="btn btn-primary" >
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <!-- /.modal-content -->
+
+                            </div>
+                        </form>
+                    </div>
+                    <!-- //bootstrap-pop-up fin inscri-->
+
+                    <!-- bootstrap-pop-up   voir  mes plats-->
+                    <div class="modal video-modal fade" id="{{ plat.id }}" tabindex="-1" role="dialog" aria-labelledby="myModal">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                     {{ plat.nom }}
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                </div>
+                                <section>
+                                    <div class="modal-body">
+                                        <div class="w3_modal_body_left">
+                                            
+                                        </div>
+                                        {% for e in plat.getPlats %}
+                                        <div class="w3_modal_body_right">
+                                            <h4>Nom du Plat:{{ e.nom }}</h4>
+                                            <p>Description :{{ e.description }}</p>
+                                            <p>Prix :{{ e.prix }}</p>
+                                        </div>
+                                        {% endfor %}
+                                        <div class="clearfix"> </div>
+                                        <div class="agile_banner_bottom_grid_pos">
+                                            <h4><a href="{{ path('pdfexample',{'id':plat.id}) }}">Generer PDF</a> </h4>
+                                        </div>
+                                    </div>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- //bootstrap-pop-up -->
+                {% endfor %}
+
+
+
+                <div class="clearfix"> </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(document).on('change', 'input[type="checkbox"]',function () {
+            var enfant = this.value ;
+            var plat = this.name ;
+            if (this.checked) {// check if the checkbox is checked
+
+                $.ajax({
+                    url:'{{ (path('inscription')) }}',
+                    type: "POST",
+                    dataType: "json",
+                    data: {
+                        "some_var_name": "some_var_value" ,
+                        "enfant" : enfant ,
+                        "plat" : plat ,
+                    },
+                    async: true,
+                    success: function (data)
+                    {
+                        console.log(data);
+                        //alert(data);
+                    }
+                });
+            }
+        });
+        {% for e in parent.enfants %}
+        {% endfor %}
+
+
+    </script>
+
+
+{% endblock %}

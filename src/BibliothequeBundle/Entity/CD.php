@@ -3,6 +3,12 @@
 namespace BibliothequeBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
+use Doctrine\Common\Collections\Collection;
+use Symfony\Component\HttpFoundation\File\File;
+use Symfony\Component\Validator\Constraints as Assert;
+
 
 /**
  * CD
@@ -18,8 +24,29 @@ class CD extends Document
      * @ORM\Column(name="auteur", type="string", length=255)
      */
     private $maisonDeProd;
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    public $path;
+    /**
+     * @Assert\File(maxSize="6000000")
+     */
+    protected $file;
 
-
+    /**
+     * @return mixed
+     */
+    public function getPath()
+    {
+        return $this->path;
+    }
+    /**
+     * @return mixed
+     */
+    public function getFile()
+    {
+        return $this->file;
+    }
     /**
      * Set maisonDeProd
      *
@@ -33,7 +60,6 @@ class CD extends Document
 
         return $this;
     }
-
     /**
      * Get maisonDeProd
      *
@@ -42,5 +68,10 @@ class CD extends Document
     public function getMaisonDeProd()
     {
         return $this->maisonDeProd;
+    }
+
+    public function __toString(){
+
+        return "CD" ;
     }
 }

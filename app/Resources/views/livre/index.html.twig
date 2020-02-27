@@ -1,20 +1,23 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Livres list</h1>
+    <div class="card card-warning">
+        <label class="card-header" >liste de tous les livre</label>
+    </div>
 
-    <table>
+    <table class="table table-bordered">
         <thead>
-            <tr>
-                <th>Auteur</th>
-                <th>Id</th>
-                <th>Titre</th>
-                <th>Description</th>
-                <th>Langue</th>
-                <th>Prix</th>
-                <th>Datepub</th>
-                <th>Actions</th>
-            </tr>
+        <tr>
+            <th>Auteur</th>
+            <th>Id</th>
+            <th>Titre</th>
+            <th>Description</th>
+            <th>Langue</th>
+            <th>Prix</th>
+            <th>Datepub</th>
+            <th>Image</th>
+            <th>Actions</th>
+        </tr>
         </thead>
         <tbody>
         {% for livre in livres %}
@@ -26,15 +29,17 @@
                 <td>{{ livre.langue }}</td>
                 <td>{{ livre.prix }}</td>
                 <td>{% if livre.datePub %}{{ livre.datePub|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td class="patient-img sorting_1" style=" width: 10px; height: 10px">
+                    <img src="{{ asset('/images/') }}{{ livre.path }}"  style=" width: 40px; height: 40px" alt="">
+                </td>
+
+
                 <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('livre_show', { 'id': livre.id }) }}">show</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('livre_edit', { 'id': livre.id }) }}">edit</a>
-                        </li>
-                    </ul>
+
+                    <a class="btn btn-info" href="{{ path('livre_show', { 'id': livre.id }) }}"><i class="fas fa-eye"></i></a>
+
+                    <a class="btn btn-warning" href="{{ path('livre_edit', { 'id': livre.id }) }}"><i class="fas fa-pen"></i></a>
+
                 </td>
             </tr>
         {% endfor %}
@@ -43,7 +48,7 @@
 
     <ul>
         <li>
-            <a href="{{ path('livre_new') }}">Create a new livre</a>
+            <a href="{{ path('livre_new') }}">Ajouter un livre</a>
         </li>
     </ul>
 {% endblock %}

@@ -1,52 +1,67 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Evenement</h1>
+    {% for message in app.flashes('info') %}
+        <div class="alert alert-success">
+            {{ message }}
+        </div>
+    {% endfor %}
 
-    <table>
+    <table class="table table-bordered">
         <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ evenement.id }}</td>
-            </tr>
-            <tr>
-                <th>Titre</th>
-                <td>{{ evenement.titre }}</td>
-            </tr>
-            <tr>
-                <th>Description</th>
-                <td>{{ evenement.description }}</td>
-            </tr>
-            <tr>
-                <th>Prix</th>
-                <td>{{ evenement.prix }}</td>
-            </tr>
-            <tr>
-                <th>Lieux</th>
-                <td>{{ evenement.lieux }}</td>
-            </tr>
-            <tr>
-                <th>Datedeb</th>
-                <td>{% if evenement.dateDeb %}{{ evenement.dateDeb|date('Y-m-d H:i:s') }}{% endif %}</td>
-            </tr>
-            <tr>
-                <th>Datefin</th>
-                <td>{% if evenement.dateFin %}{{ evenement.dateFin|date('Y-m-d H:i:s') }}{% endif %}</td>
-            </tr>
+        <tr>
+            <th style="width:9px">Id</th>
+            <td>{{ evenement.id }}</td>
+        </tr>
+        <tr>
+            <th>Titre</th>
+            <td>{{ evenement.titre }}</td>
+        </tr>
+        <tr>
+            <th>Description</th>
+            <td>{{ evenement.description }}</td>
+        </tr>
+        <tr>
+            <th>Prix</th>
+            <td>{{ evenement.prix }}</td>
+        </tr>
+        <tr>
+            <th>Lieux</th>
+            <td>{{ evenement.lieux }}</td>
+        </tr>
+        <tr>
+            <th>Datedeb</th>
+            <td>{% if evenement.dateDeb %}{{ evenement.dateDeb|date('Y-m-d H:i:s') }}{% endif %}</td>
+        </tr>
+        <tr>
+            <th>Datefin</th>
+            <td>{% if evenement.dateFin %}{{ evenement.dateFin|date('Y-m-d H:i:s') }}{% endif %}</td>
+        </tr>
+        <tr>
+            <th>Image</th>
+            <td class="patient-img sorting_1" style=" width: 10px; height: 10px">
+                <img src="{{ asset('/images/') }}{{ evenement.path }}"  style=" width: 20px; height: 20px" alt="">
+            </td>
+        </tr>
         </tbody>
     </table>
 
     <ul>
-        <li>
-            <a href="{{ path('evenement_index') }}">Back to the list</a>
-        </li>
-        <li>
-            <a href="{{ path('evenement_edit', { 'id': evenement.id }) }}">Edit</a>
-        </li>
-        <li>
-            {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
-            {{ form_end(delete_form) }}
-        </li>
+        <div class="col-md-2">
+            <div class="card-body pad table-responsive">
+                <a  class="btn btn-block btn-outline-secondary" href="{{ path('evenement_index') }}">Back to the list</a>
+            </div>
+        </div>
+
+        <a class="btn btn-warning" href="{{ path('evenement_edit', { 'id': evenement.id }) }}"><i class="fas fa-pen"></i></a>
+
+        <div class="col-md-2">
+            <div class="card-body pad table-responsive">
+                {{ form_start(delete_form) }}
+                <input type="submit" class="btn btn-block btn-outline-danger" class="fas fa-trash" value="Delete" />
+                {{ form_end(delete_form) }}
+            </div>
+        </div>
+
     </ul>
 {% endblock %}

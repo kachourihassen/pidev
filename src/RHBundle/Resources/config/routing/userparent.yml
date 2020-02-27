@@ -1,0 +1,28 @@
+userparent_index:
+    path:     /
+    defaults: { _controller: "RHBundle:UserParent:index" }
+    methods:  GET
+
+userparent_show:
+    path:     /{id}/show
+    defaults: { _controller: "RHBundle:UserParent:show" }
+    methods:  GET
+
+userparent_new:
+    path:     /new
+    defaults: { _controller: "RHBundle:UserParent:new" }
+    methods:  [GET, POST]
+
+userparent_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "RHBundle:UserParent:edit" }
+    methods:  [GET, POST]
+
+userparent_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "RHBundle:UserParent:delete" }
+    methods:  DELETE
+userparent_edit_profile:
+    path:     /edit/{id}
+    defaults: { _controller: "RHBundle:UserParent:editParent" }
+    methods:  [GET, POST]

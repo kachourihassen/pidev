@@ -1,6 +1,7 @@
-{% extends 'base.html.twig' %}
-
-{% block content %}
+{% extends is_granted('ROLE_ADMIN')
+    ? 'base.html.twig'
+    : 'ense.html.twig' %}
+{% block body %}
     <div class="card card-warning">
         <label class="card-header" >Ajouter une reclamation</label>
 

@@ -9,22 +9,18 @@ use Doctrine\ORM\Mapping\OneToMany;
 use FOS\UserBundle\Model\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
-
+use Symfony\Component\Validator\Constraints as Assert;
 /**
  *
  * @ORM\Entity
  * @InheritanceType("SINGLE_TABLE")
  * @DiscriminatorColumn(name="role", type="string")
- * @DiscriminatorMap({ "user" = "User" ,"enseigant" = "RHBundle\Entity\Enseignant", "parent" = "RHBundle\Entity\UserParent" })
+ * @DiscriminatorMap({ "user" = "User" ,"enseignant" = "RHBundle\Entity\Enseignant", "parent" = "RHBundle\Entity\UserParent" })
  * @ORM\Table(name="fos_user")
  */
 class User extends BaseUser
 {
-    public function __construct()
-    {
-        parent::__construct();
 
-    }
     /**
      * @var int
      *
@@ -46,6 +42,42 @@ class User extends BaseUser
      * @ORM\Column(name="sexe", type="string", length=255 ,nullable=true)
      */
     protected $sexe;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="tel", type="integer" ,nullable=true)
+     */
+    protected $tel;
+
+    /**
+     * @return int
+     */
+    public function getTel()
+    {
+        return $this->tel;
+    }
+
+    /**
+     * @param int $tel
+     */
+    public function setTel($tel)
+    {
+        $this->tel = $tel;
+    }
+
+    /**
+     * @ORM\Column(type="datetime")
+     */
+    protected $dateInscription;
+
+    /**
+     * @return \DateTime
+     */
+    public function getDateInscription()
+    {
+        return $this->dateInscription;
+    }
 
     /**
      * @return string
@@ -86,20 +118,21 @@ class User extends BaseUser
     protected $prenom;
 
     /**
- * @var string
- *
- * @ORM\Column(name="adresse", type="string", length=255 , nullable=true)
- */
+     * @var string
+     *
+     * @ORM\Column(name="adresse", type="string", length=255 , nullable=true)
+     */
     protected $adresse;
 
     /**
      * @var \DateTime
      *
      * @ORM\Column(name="dateDeNaissance", type="datetime", nullable=true)
+     *
+     * @Assert\LessThan("-18 years")
      */
+
     protected $dateDeNaissance;
-
-
 
     /**
      * Get id
@@ -110,7 +143,11 @@ class User extends BaseUser
     {
         return $this->id;
     }
-
+    public function __construct()
+    {
+        parent::__construct();
+        $this->dateInscription= new \DateTime();
+    }
 
 
     /**
@@ -184,4 +221,10 @@ class User extends BaseUser
     {
         return $this->dateDeNaissance;
     }
+
+
+
+
+
+
 }

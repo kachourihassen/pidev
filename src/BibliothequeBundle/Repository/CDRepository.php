@@ -10,4 +10,9 @@ namespace BibliothequeBundle\Repository;
  */
 class CDRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function getCDByDate(){
+        return $this->createQueryBuilder('cd')
+            ->where('cd.endDateEmprunt < CURRENT_DATE()')
+            ->getQuery()->getResult();
+    }
 }

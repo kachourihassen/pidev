@@ -10,4 +10,10 @@ namespace RestaurantBundle\Repository;
  */
 class AARepository extends \Doctrine\ORM\EntityRepository
 {
+
+    public function countInscri($i){
+        $query=$this->getEntityManager()->createQuery("SELECT COUNT( c) FROM RestaurantBundle:InscriptionRepas c WHERE c.repas='$i'");
+        return $query->getResult();
+        //SELECT COUNT(*) FROM RestaurantBundle:InscriptionRepas WHERE repas='$i'
+    }
 }

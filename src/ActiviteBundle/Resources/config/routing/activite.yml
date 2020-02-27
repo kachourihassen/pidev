@@ -22,3 +22,15 @@ activite_delete:
     path:     /{id}/delete
     defaults: { _controller: "ActiviteBundle:Activite:delete" }
     methods:  DELETE
+act_parent:
+    path: /profile/activite
+    defaults: {_controller: ActiviteBundle:Activite:act_parent }
+    methods:  [POST,GET]
+filter:
+    path: /filter
+    defaults: {_controller: ActiviteBundle:Activite:filter }
+    methods:  [GET, POST]
+activite_part:
+    path:     /participer/{id}
+    defaults: { _controller: "ActiviteBundle:Activite:activite_part" }
+    methods:  [POST,GET]

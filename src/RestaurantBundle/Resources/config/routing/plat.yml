@@ -22,3 +22,10 @@ plat_delete:
     path:     /{id}/delete
     defaults: { _controller: "RestaurantBundle:Plat:delete" }
     methods:  DELETE
+index_plat_parent:
+    path:     /indexplatParent
+    defaults: { _controller: "RestaurantBundle:Plat:indexplatparent" }
+inscription:
+    path:     /inscription
+    defaults: { _controller: "RestaurantBundle:Default:inscription" }
+    methods:  [GET, POST]

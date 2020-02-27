@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping\JoinColumn;
 use Doctrine\ORM\Mapping\OneToMany;
 use Doctrine\ORM\Mapping\OneToOne;
 use ReclamationBundle\Entity\Reclamation;
-
+use Symfony\Component\Validator\Constraints as Assert;
 /**
  * Enseignant
  * @ORM\Entity()
@@ -41,9 +41,13 @@ class Enseignant extends User
     /**
      * @var float
      *
-     * @ORM\Column(name="salaire", type="float")
+     * @ORM\Column(name="salaire", type="float" )
+     * @Assert\GreaterThan(
+     *     value = 100
+     *     )
      */
     private $salaire;
+
     /**
      * One Cart has One Customer.
      * @OneToOne(targetEntity="RHBundle\Entity\Classe", inversedBy="enseignant")
@@ -56,8 +60,6 @@ class Enseignant extends User
      * @OneToMany(targetEntity="RHBundle\Entity\Conge", mappedBy="enseignant")
      */
     private $congee;
-
-
     /**
      * Set salaire
      *
@@ -92,7 +94,6 @@ class Enseignant extends User
     public function setClasse(\RHBundle\Entity\Classe $classe = null)
     {
         $this->classe = $classe;
-
         return $this;
     }
 
@@ -301,4 +302,59 @@ class Enseignant extends User
     {
         return $this->reclamations;
     }
+
+    /**
+     * @return \DateTime
+     */
+    public function getDateInscription()
+    {
+        return $this->dateInscription;
+    }
+
+    /**
+     * @param \DateTime $dateInscription
+     */
+    public function setDateInscription($dateInscription)
+    {
+        $this->dateInscription = $dateInscription;
+    }
+
+    /**
+     * @return int
+     */
+    public function getTel()
+    {
+        return $this->tel;
+    }
+
+    /**
+     * @param int $tel
+     */
+    public function setTel($tel)
+    {
+        $this->tel = $tel;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isEnabled()
+    {
+        return $this->enabled;
+    }
+
+    /**
+     * @param bool $enabled
+     */
+    public function setEnabled($enabled)
+    {
+        $this->enabled = $enabled;
+    }
+
+    public function __toString(){
+
+        return $this->nom;
+
+    }
+
 }

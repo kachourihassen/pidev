@@ -30,12 +30,11 @@ class ClasseController extends Controller
             return $this->redirectToRoute('classe_show', array('id' => $classe->getId()));
         }
         $query = $classes;
-
         $paginator = $this->get('knp_paginator');
         $resultat = $paginator->paginate(
-            $query, /* query NOT result */
-            $request->query->getInt('page', 1), /*page number*/
-            5 /*limit per page*/
+            $query,
+            $request->query->getInt('page', 1),
+            5
         );
         return $this->render('classe/index.html.twig', array(
             'classes' => $resultat,'classe' => $classe,
@@ -52,12 +51,11 @@ class ClasseController extends Controller
         $classe = new Classe();
         $form = $this->createForm('RHBundle\Form\ClasseType', $classe);
         $form->handleRequest($request);
-
+        print "sdfsdf";
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $em->persist($classe);
             $em->flush();
-
             return $this->redirectToRoute('classe_show', array('id' => $classe->getId()));
         }
 
@@ -66,7 +64,6 @@ class ClasseController extends Controller
             'form' => $form->createView(),
         ));
     }
-
     /**
      * Finds and displays a classe entity.
      *
@@ -118,7 +115,6 @@ class ClasseController extends Controller
             $em->remove($classe);
             $em->flush();
         }
-
         return $this->redirectToRoute('classe_index');
     }
 

@@ -22,3 +22,12 @@ repas_delete:
     path:     /{id}/delete
     defaults: { _controller: "RestaurantBundle:Repas:delete" }
     methods:  DELETE
+contruire_repas:
+    path:     /construirerepas
+    defaults: { _controller: "RestaurantBundle:Repas:construirerepas" }
+liste_inscription:
+    path:     /listeinscription
+    defaults: { _controller: "RestaurantBundle:Repas:listeinscription" }
+mes_inscription:
+    path:     /mesinscriptions
+    defaults: { _controller: "RestaurantBundle:Repas:mesinscriptions" }

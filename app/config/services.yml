@@ -33,3 +33,6 @@ services:
     # AppBundle\Service\ExampleService:
     #     arguments:
     #         $someArgument: 'some_value'
+    ReclamationBundle\DataFixtures\:
+        resource: '../../src/ReclamationBundle/DataFixtures'
+        tags: ['doctrine.fixture.orm']

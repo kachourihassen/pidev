@@ -5,3 +5,5 @@ activite_activite:
 activite_homepage:
     path:     /
     defaults: { _controller: ActiviteBundle:Default:index }
+
+

@@ -1,3 +1,11 @@
+showparentevent_show:
+    path:   /showparentfront
+    defaults: { _controller: "EvenementBundle:Evenement:indexparentevent" }
+    methods:  [GET, POST]
+indexparentevent_index:
+    path:     /parentevent
+    defaults: { _controller: "EvenementBundle:Evenement:indexparentevent" }
+    methods:  GET
 evenement_index:
     path:     /
     defaults: { _controller: "EvenementBundle:Evenement:index" }
@@ -22,3 +30,7 @@ evenement_delete:
     path:     /{id}/delete
     defaults: { _controller: "EvenementBundle:Evenement:delete" }
     methods:  DELETE
+evenement_calendar:
+    path:     /calendar
+    defaults: { _controller: "EvenementBundle:Evenement:calendar" }
+    methods:  GET

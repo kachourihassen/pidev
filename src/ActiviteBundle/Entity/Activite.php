@@ -2,8 +2,10 @@
 
 namespace ActiviteBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\ORM\Mapping\OneToMany;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Activite
@@ -41,6 +43,11 @@ class Activite
      * @var float
      *
      * @ORM\Column(name="prix", type="float")
+     *
+     * @Assert\GreaterThan(
+     *     value=0,
+     *     message="le prix doit etre superieur a 0"
+     *     )
      */
     private $prix;
 
@@ -74,6 +81,7 @@ class Activite
     public function __construct()
     {
         $this->inscriptions = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->inscriptions= new ArrayCollection();
     }
 
     /**

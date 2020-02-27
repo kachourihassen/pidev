@@ -3,16 +3,19 @@
 namespace RestaurantBundle\Entity;
 
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 use Doctrine\ORM\Mapping\JoinTable;
 use Doctrine\ORM\Mapping\ManyToMany;
 use Doctrine\ORM\Mapping\OneToMany;
+use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 /**
  * Repas
- *
- * @ORM\Entity()
+ * @ORM\Entity(repositoryClass="RestaurantBundle\Repository\AARepository")
  * @ORM\Table(name="repas")
  *
  */
@@ -68,6 +71,10 @@ class Repas
      */
     private $plats;
 
+
+
+
+
     /**
      * Get id
      *
@@ -79,18 +86,51 @@ class Repas
     }
 
 
-
     /**
      * Constructor
      */
     public function __construct()
     {
-        $this->inscriptions = new \Doctrine\Common\Collections\ArrayCollection();
-        $this->plats = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->inscriptions = new ArrayCollection();
+        $this->plats = new ArrayCollection();
     }
 
     /**
-     * Set nom.
+     * Add inscription
+     *
+     * @param InscriptionRepas $inscription
+     *
+     * @return Repas
+     */
+    public function addInscription(InscriptionRepas $inscription)
+    {
+        $this->inscriptions[] = $inscription;
+
+        return $this;
+    }
+
+    /**
+     * Remove inscription
+     *
+     * @param InscriptionRepas $inscription
+     */
+    public function removeInscription(InscriptionRepas $inscription)
+    {
+        $this->inscriptions->removeElement($inscription);
+    }
+
+    /**
+     * Get inscriptions
+     *
+     * @return Collection
+     */
+    public function getInscriptions()
+    {
+        return $this->inscriptions;
+    }
+
+    /**
+     * Set nom
      *
      * @param string $nom
      *
@@ -104,7 +144,7 @@ class Repas
     }
 
     /**
-     * Get nom.
+     * Get nom
      *
      * @return string
      */
@@ -114,7 +154,7 @@ class Repas
     }
 
     /**
-     * Set heure.
+     * Set heure
      *
      * @param \DateTime $heure
      *
@@ -128,7 +168,7 @@ class Repas
     }
 
     /**
-     * Get heure.
+     * Get heure
      *
      * @return \DateTime
      */
@@ -138,7 +178,7 @@ class Repas
     }
 
     /**
-     * Set prix.
+     * Set prix
      *
      * @param float $prix
      *
@@ -152,7 +192,7 @@ class Repas
     }
 
     /**
-     * Get prix.
+     * Get prix
      *
      * @return float
      */
@@ -162,7 +202,7 @@ class Repas
     }
 
     /**
-     * Set description.
+     * Set description
      *
      * @param string $description
      *
@@ -176,7 +216,7 @@ class Repas
     }
 
     /**
-     * Get description.
+     * Get description
      *
      * @return string
      */
@@ -186,49 +226,13 @@ class Repas
     }
 
     /**
-     * Add inscription.
+     * Add plat
      *
-     * @param \RestaurantBundle\Entity\InscriptionRepas $inscription
-     *
-     * @return Repas
-     */
-    public function addInscription(\RestaurantBundle\Entity\InscriptionRepas $inscription)
-    {
-        $this->inscriptions[] = $inscription;
-
-        return $this;
-    }
-
-    /**
-     * Remove inscription.
-     *
-     * @param \RestaurantBundle\Entity\InscriptionRepas $inscription
-     *
-     * @return boolean TRUE if this collection contained the specified element, FALSE otherwise.
-     */
-    public function removeInscription(\RestaurantBundle\Entity\InscriptionRepas $inscription)
-    {
-        return $this->inscriptions->removeElement($inscription);
-    }
-
-    /**
-     * Get inscriptions.
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getInscriptions()
-    {
-        return $this->inscriptions;
-    }
-
-    /**
-     * Add plat.
-     *
-     * @param \RestaurantBundle\Entity\Plat $plat
+     * @param Plat $plat
      *
      * @return Repas
      */
-    public function addPlat(\RestaurantBundle\Entity\Plat $plat)
+    public function addPlat(Plat $plat)
     {
         $this->plats[] = $plat;
 
@@ -236,21 +240,19 @@ class Repas
     }
 
     /**
-     * Remove plat.
+     * Remove plat
      *
-     * @param \RestaurantBundle\Entity\Plat $plat
-     *
-     * @return boolean TRUE if this collection contained the specified element, FALSE otherwise.
+     * @param Plat $plat
      */
-    public function removePlat(\RestaurantBundle\Entity\Plat $plat)
+    public function removePlat(Plat $plat)
     {
-        return $this->plats->removeElement($plat);
+        $this->plats->removeElement($plat);
     }
 
     /**
-     * Get plats.
+     * Get plats
      *
-     * @return \Doctrine\Common\Collections\Collection
+     * @return Collection
      */
     public function getPlats()
     {
@@ -261,4 +263,6 @@ class Repas
         return $this->nom;
 
     }
+
+
 }

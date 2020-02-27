@@ -3,6 +3,8 @@
 namespace RestaurantBundle\Controller;
 
 use RestaurantBundle\Entity\Plat;
+use RHBundle\Entity\UserParent;
+use RHBundle\RHBundle;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
@@ -39,9 +41,10 @@ class PlatController extends Controller
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
-            print $plat->getRepas()->indexOf(0);
+
             $em->persist($plat);
             $em->flush();
+            $this->addFlash('info','ajout avec succes');
 
             return $this->redirectToRoute('plat_show', array('id' => $plat->getId()));
         }
@@ -120,6 +123,26 @@ class PlatController extends Controller
             ->setAction($this->generateUrl('plat_delete', array('id' => $plat->getId())))
             ->setMethod('DELETE')
             ->getForm()
-        ;
+            ;
     }
+
+    //front du pere
+    public function indexplatparentAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+        $plats = $em->getRepository('RestaurantBundle:Repas')->findAll();
+
+        $user = $this->container->get('security.token_storage')->getToken()->getUser();
+        $parent = $this->getDoctrine()->getRepository(UserParent::class)->find($user->getId());
+           echo 'user num '.$user->getId().' !'; echo 'user nom '.$user->getNom().' !';
+       echo 'parent '.$parent->getId().' !';
+
+        return $this->render('plat/indexplatparent.html.twig', array(
+            'plats' => $plats,'parent' => $parent
+        ));
+    }
+
+    //file repas
+
+
 }

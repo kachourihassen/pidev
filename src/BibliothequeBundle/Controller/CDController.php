@@ -5,6 +5,7 @@ namespace BibliothequeBundle\Controller;
 use BibliothequeBundle\Entity\CD;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Validator\Constraints\Date;
 
 /**
  * Cd controller.
@@ -23,7 +24,7 @@ class CDController extends Controller
         $cDs = $em->getRepository('BibliothequeBundle:CD')->findAll();
 
         return $this->render('cd/index.html.twig', array(
-            'cDs' => $cDs,
+            'cds' => $cDs,
         ));
     }
 
@@ -39,6 +40,9 @@ class CDController extends Controller
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
+            $cD->upload();
+            $date=new \DateTime(Date('yy-m-d', strtotime("-1 days")));
+            $cD->setEndDateEmprunt($date);
             $em->persist($cD);
             $em->flush();
 
@@ -48,6 +52,17 @@ class CDController extends Controller
         return $this->render('cd/new.html.twig', array(
             'cD' => $cD,
             'form' => $form->createView(),
+        ));
+    }
+
+    public function consultercdAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $cds = $em->getRepository('BibliothequeBundle:CD')->getCDByDate();
+
+        return $this->render('cd/cdfront.html.twig', array(
+            'cds' => $cds,
         ));
     }
 

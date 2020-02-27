@@ -15,8 +15,8 @@ class RepasType extends AbstractType
     {
         $builder->add('nom')->add('heure')->add('prix')->add('description')->add('plats');
     }/**
-     * {@inheritdoc}
-     */
+ * {@inheritdoc}
+ */
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
@@ -31,6 +31,7 @@ class RepasType extends AbstractType
     {
         return 'restaurantbundle_repas';
     }
+
 
 
 }

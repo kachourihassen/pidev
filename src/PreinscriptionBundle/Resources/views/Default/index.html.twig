@@ -13,13 +13,79 @@
     <link rel="stylesheet" href="{{ asset('colorlib/styleStepper.css') }}">
     <!-- Main css -->
     <link rel="stylesheet" href="{{ asset('colorlib/css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('colorlib/css/style.css') }}">
     <!-- JS -->
     <script src="{{ asset('colorlib/vendor/jquery/jquery.min.js') }}"></script>
     <script src="{{ asset('colorlib/js/main.js') }}"></script>
 </head>
 <body>
 <div class="container">
+    {% if success %}
+        <button  type="button" id="success" class="btn btn-danger hidden" data-toggle="modal" data-target="#modal-success">
+            Launch Danger Modal
+        </button>
+        <div class="modal fade" id="modal-success">
+            <div class="modal-dialog">
+                <div class="modal-content" style="background-color: green;color: white;">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Validation</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body text-center" >
+                        <p style="color: white;">{{ success.content }}</p>
+                    </div>
+                    <div class="modal-footer justify-content-between">
+                        <a href="{{ path('app_index') }}" type="button" class="btn btn-outline-light " data-dismiss="modal" >OK</a>
+                    </div>
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </div>
+        <script>
+            $(document).ready(function() {
+                $("#success").click();
+            });
+        </script>
+    {% endif %}
 
+    {% if error %}
+
+
+        <button  type="button" id="error" class="btn btn-danger hidden" data-toggle="modal" data-target="#modal-danger">
+            Launch Danger Modal
+        </button>
+        <div class="modal fade" id="modal-danger">
+            <div class="modal-dialog">
+                <div class="modal-content "style="background-color: #d9534f;color: white;">
+                    <div class="modal-header">
+                        <h4 class="modal-title">ERREUR</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body text-center" >
+                        <p style="color: white;">{{ error.content }}</p>
+                    </div>
+                    <div class="modal-footer justify-content-between">
+                        <button type="button" class="btn btn-outline-light " data-dismiss="modal" style="color: black;">Close</button>
+                    </div>
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </div>
+        <script>
+            $(document).ready(function() {
+                $("#error").click();
+            });
+        </script>
+        <!-- /.modal -->
+
+    {% endif %}
     <div class="stepwizard col-md-offset-3">
         <div class="stepwizard-row setup-panel">
             <div class="stepwizard-step">
@@ -46,27 +112,27 @@
                             <h2 class="form-title">Sign up</h2>
                             <div  class="register-form" id="register-form">
                                 <div class="form-group">
-                                    <label for="nom"><i class="zmdi zmdi-account material-icons-name"></i></label>
-                                    <input type="text"  name="nom" id="name" required="required" placeholder="Nom"/>
+                                    <label for="nom"><i class="zmdi zmdi-account  material-icons-name"></i></label>
+                                    <input type="text"  name="nom" id="name"  aria-required="true" required="required" placeholder="Nom"/>
                                 </div>
                                 <div class="form-group">
                                     <label for="prenom"><i class="zmdi zmdi-account material-icons-name"></i></label>
-                                    <input type="text" name="prenom" required="required" id="name" placeholder="Prenom"/>
+                                    <input type="text" name="prenom" aria-required="true" required="required" id="name" placeholder="Prenom"/>
                                 </div>
                                 <div class="form-group">
                                     <label for="email"><i class="zmdi zmdi-email"></i></label>
-                                    <input type="email" name="email" required="required" id="email" placeholder=""/>
+                                    <input type="email" name="email" aria-required="true"  required="required" id="email" placeholder=""/>
                                 </div>
                                 <div class="form-group">
-                                    <label for="pass"><i class="zmdi zmdi-lock"></i></label>
-                                    <input type="tel" name="tel" required="required" id="pass" placeholder="tel"/>
+                                    <label for="pass"><i class="zmdi zmdi-phone"></i></label>
+                                    <input type="tel" name="tel" aria-required="true" required="required"  id="pass" placeholder="tel"/>
                                 </div>
                                 <div class="form-group">
-                                    <label for="re-pass"><i class="zmdi zmdi-lock-outline"></i></label>
-                                    <input type="date" name="dateNaissance" required="required" id="re_pass" placeholder="date naissance"/>
+                                    <label for="re-pass"><i class="zmdi zmdi-calendar"></i></label>
+                                    <input type="date" name="dateNaissance" max="{{ 'now'|date_modify("-18 months")|date('Y-m-d') }}" aria-required="true" required="required" id="re_pass" placeholder="date naissance"/>
                                 </div>
                                 <div class="form-group">
-                                    <label for="re-pass"><i class="zmdi zmdi-lock-outline"></i></label>
+                                    <label for="re-pass"><i class="zmdi zmdi-google-maps"></i></label>
                                     <input type="text" name="adress" required="required" id="re_pass" placeholder="adress"/>
                                 </div>
                                 <div class="form-group">
@@ -88,9 +154,9 @@
         </div>
         <div class="row setup-content" id="step-2">
             <div class="signup-content">
-            <div  class="panel panel-default">
-                <h2>Enfants</h2>
-                <div class="panel-body">
+                <div  class="panel panel-default">
+                    <h2>Enfants</h2>
+                    <div class="panel-body">
                         <div class="row clearfix">
                             <div class="col-md-12 column">
                                 <table class="table table-hover tab-pane  table-hover" id="tab_logic">
@@ -128,7 +194,7 @@
                                             <input type="text" name='prenom0' required placeholder='Prenom' class="form-control"/>
                                         </td>
                                         <td>
-                                            <input type="date" name='date0'  required placeholder='Date de naissance' class="form-control"/>
+                                            <input type="date" name='date0' min="{{ 'now'|date('Y-m-d') }}"   placeholder='Date de naissance' class="form-control required"/>
                                         </td>
                                         <td>
                                             <select class="form-control" id="educationDate" name="sexe0">
@@ -145,11 +211,11 @@
                         </div>
                     </div>
 
-                <div class="form-group form-button">
-                    <button class="btn btn-primary nextBtn btn-lg pull-right form-submit" type="button" >Next</button>
-                </div>
+                    <div class="form-group form-button">
+                        <button class="btn btn-primary nextBtn btn-lg pull-right form-submit" type="button" >Next</button>
+                    </div>
 
-            </div>
+                </div>
             </div>
         </div>
         <!-- enenenn !-->
@@ -167,7 +233,7 @@
 
 </div>
 
-<script  >
+<script>
 
     $(document).ready(function () {
         var navListItems = $('div.setup-panel div a'),

@@ -2,7 +2,9 @@
 
 namespace RestaurantBundle\Controller;
 
+use RestaurantBundle\Entity\InscriptionRepas;
 use RestaurantBundle\Entity\Repas;
+use RHBundle\Entity\UserParent;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
@@ -12,6 +14,7 @@ use Symfony\Component\HttpFoundation\Request;
  */
 class RepasController extends Controller
 {
+
     /**
      * Lists all repa entities.
      *
@@ -25,6 +28,15 @@ class RepasController extends Controller
         return $this->render('repas/index.html.twig', array(
             'repas' => $repas,
         ));
+    }
+
+    public function construireRepasAction()
+    {
+        //$em = $this->getDoctrine()->getManager();
+
+        //$repas = $em->getRepository('RestaurantBundle:Repas')->findAll();
+
+        return $this->render('repas/construirerepas.html.twig');
     }
 
     /**
@@ -64,6 +76,39 @@ class RepasController extends Controller
             'delete_form' => $deleteForm->createView(),
         ));
     }
+
+    public function listeinscriptionAction( )
+    {$i=0;$t=0;
+        $em = $this->getDoctrine();
+        $repas = $em->getRepository('RestaurantBundle:Repas')->findAll();
+        $nb = array();
+        echo "tab 1";
+        foreach($repas as $e)
+        {
+            $nb[]=$em->getRepository(InscriptionRepas::class)->countInscri($e->getId());$i++;
+          //  print_r($nb);
+        }
+        echo " </br> nb ";print_r($nb);
+        echo " </br> nb 0 ";print_r($nb[0]);
+      while ($t < $i){
+           $tab[$t]=$nb[$t];$t++;
+       }echo " </br> tab ";print_r($tab);
+
+        return $this->render('repas/listeinscription.html.twig', array('nb' => $nb,'repas'=>$repas));
+    }
+
+    public function mesinscriptionsAction(){
+        $user=$this->container->get('security.token_storage')->getToken()->getUser();
+        $parent=$this->getDoctrine()->getRepository(UserParent::class)->find($user->getId());
+        $insc=$this->getDoctrine()->getRepository(InscriptionRepas::class)->findAll();
+
+        return $this->render('repas/mesinscriptions.html.twig', array(
+            'insc' => $insc,'parent' => $parent
+        ));
+
+    }
+
+
 
     /**
      * Displays a form to edit an existing repa entity.
@@ -119,6 +164,20 @@ class RepasController extends Controller
             ->setAction($this->generateUrl('repas_delete', array('id' => $repa->getId())))
             ->setMethod('DELETE')
             ->getForm()
-        ;
+            ;
     }
+    public function getPlatsAction(Request $request, Repas $repa)
+    {
+        $form = $this->createDeleteForm($repa);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $em = $this->getDoctrine()->getManager();
+            $em->remove($repa);
+            $em->flush();
+        }
+
+        return $this->redirectToRoute('repas_index');
+    }
+
 }

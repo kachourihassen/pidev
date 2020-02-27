@@ -22,3 +22,15 @@ livre_delete:
     path:     /{id}/delete
     defaults: { _controller: "BibliothequeBundle:Livre:delete" }
     methods:  DELETE
+showlivrefront:
+    path:     /showlivrefront
+    defaults: { _controller: "BibliothequeBundle:Livre:showlivrefront" }
+    methods:  GET
+
+consulterlivre:
+    path:     /consulterlivre
+    defaults: { _controller: "BibliothequeBundle:Livre:consulterlivre" }
+    methods:  GET
+emprunter:
+    path:     /emprunter/{id}
+    defaults: { _controller: "BibliothequeBundle:Livre:emprunter" }

@@ -1,16 +1,17 @@
-{% extends 'base.html.twig' %}
+{% extends 'admin.html.twig' %}
 
 {% block body %}
     <h1>Activite creation</h1>
 
     {{ form_start(form) }}
         {{ form_widget(form) }}
-        <input type="submit" value="Create" />
+        <input CLASS="btn btn-block btn-success" type="submit" value="Create" />
     {{ form_end(form) }}
 
     <ul>
-        <li>
-            <a href="{{ path('activite_index') }}">Back to the list</a>
-        </li>
+
+            <a CLASS="btn btn-block bg-gradient-danger" href="{{ path('activite_index') }}">Back to the list</a>
+
     </ul>
+
 {% endblock %}

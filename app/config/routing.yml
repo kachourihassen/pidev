@@ -51,3 +51,38 @@ app_admin:
 
 fos_user:
     resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+
+pdfexample:
+  path:     /pdf/{id}
+  defaults: { _controller: "AppBundle:Default:pdf" }
+  methods:  [GET,POST]
+
+app_index_parent:
+  path:     /indexparent
+  defaults: { _controller: "AppBundle:Default:indexparent" }
+
+toiba_fullcalendar:
+  resource: "@FullCalendarBundle/Resources/config/routing.yaml"
+pay_form:
+    path: /paypal/{montant}
+    defaults: { _controller: "PaiementBundle:Default:pay" }
+    methods: [GET,POST]
+show_facture:
+    path: /facture
+    defaults: { _controller: "PaiementBundle:Default:show_facture" }
+log_cont:
+  path:     /verif
+  defaults: { _controller: "AppBundle:Default:log" }
+  methods:  GET
+admin_home:
+  path:     /Dashbord
+  defaults: { _controller: "AppBundle:Default:admin_home" }
+  methods:  GET
+parent_home:
+    path:   /profile
+    defaults: { _controller: "AppBundle:Default:parent_home" }
+    methods:  GET
+enseignant_home:
+    path:   /enseignat
+    defaults: { _controller: "AppBundle:Default:enseignant_home" }
+    methods:  GET

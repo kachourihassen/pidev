@@ -46,7 +46,6 @@ class ReclamationController extends Controller
     {
         if(in_array('ROLE_PARENT', $this->getUser()->getRoles())) {
             $reclamation = new ReclamationParent();
-
         }else{
             $reclamation = new ReclamationAdmin();
         }
@@ -108,7 +107,7 @@ class ReclamationController extends Controller
         $editForm = $this->createForm('ReclamationBundle\Form\ReclamationType', $reclamation);
         $class_name = $this->getDoctrine()->getManager()->getClassMetadata(get_class($reclamation))->getName();
 
-        if((in_array('ROLE_SUPER_ADMIN', $this->getUser()->getRoles())) && ($class_name == "ReclamationBundle\Entity\ReclamationParent") ) {
+        if((in_array('ROLE_ADMIN', $this->getUser()->getRoles())) && ($class_name == "ReclamationBundle\Entity\ReclamationParent") ) {
             $editForm->add('status', EntityType::class, [
                 // looks for choices from this entity
                 'class' => 'ReclamationBundle:Status',

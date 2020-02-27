@@ -2,6 +2,7 @@
 
 namespace RestaurantBundle\Entity;
 
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\ORM\Mapping\JoinColumn;
 use Doctrine\ORM\Mapping\ManyToMany;
@@ -9,7 +10,7 @@ use Doctrine\ORM\Mapping\ManyToOne;
 
 /**
  * Plat
- * @ORM\Entity()
+ * @ORM\Entity(repositoryClass="RestaurantBundle\Repository\AARepository")
  * @ORM\Table(name="plat")
  *
  */
@@ -51,22 +52,8 @@ class Plat
      */
     private $repas;
 
-
-    public function __toString(){
-
-        return $this->nom;
-
-    }
     /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->repas = new \Doctrine\Common\Collections\ArrayCollection();
-    }
-
-    /**
-     * Get id.
+     * Get id
      *
      * @return int
      */
@@ -76,7 +63,7 @@ class Plat
     }
 
     /**
-     * Set nom.
+     * Set nom
      *
      * @param string $nom
      *
@@ -90,7 +77,7 @@ class Plat
     }
 
     /**
-     * Get nom.
+     * Get nom
      *
      * @return string
      */
@@ -100,7 +87,7 @@ class Plat
     }
 
     /**
-     * Set prix.
+     * Set prix
      *
      * @param float $prix
      *
@@ -114,7 +101,7 @@ class Plat
     }
 
     /**
-     * Get prix.
+     * Get prix
      *
      * @return float
      */
@@ -124,7 +111,7 @@ class Plat
     }
 
     /**
-     * Set description.
+     * Set description
      *
      * @param string $description
      *
@@ -138,7 +125,7 @@ class Plat
     }
 
     /**
-     * Get description.
+     * Get description
      *
      * @return string
      */
@@ -146,15 +133,22 @@ class Plat
     {
         return $this->description;
     }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->repas = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
     /**
-     * Add repa.
+     * Add repa
      *
-     * @param \RestaurantBundle\Entity\Repas $repa
+     * @param Repas $repa
      *
      * @return Plat
      */
-    public function addRepas(\RestaurantBundle\Entity\Repas $repa)
+    public function addRepa(Repas $repa)
     {
         $this->repas[] = $repa;
 
@@ -162,52 +156,27 @@ class Plat
     }
 
     /**
-     * Remove repa.
+     * Remove repa
      *
-     * @param \RestaurantBundle\Entity\Repas $repa
-     *
-     * @return boolean TRUE if this collection contained the specified element, FALSE otherwise.
+     * @param Repas $repa
      */
-    public function removeRepas(\RestaurantBundle\Entity\Repas $repa)
+    public function removeRepa(Repas $repa)
     {
-        return $this->repas->removeElement($repa);
+        $this->repas->removeElement($repa);
     }
 
     /**
-     * Get repas.
+     * Get repas
      *
-     * @return \Doctrine\Common\Collections\Collection
+     * @return Collection
      */
     public function getRepas()
     {
         return $this->repas;
     }
+    public function __toString(){
 
-    /**
-     * Add repa.
-     *
-     * @param \RestaurantBundle\Entity\Repas $repa
-     *
-     * @return Plat
-     */
-    public function addRepa(\RestaurantBundle\Entity\Repas $repa)
-    {
-        $this->repas[] = $repa;
+        return $this->nom;
 
-        return $this;
     }
-
-    /**
-     * Remove repa.
-     *
-     * @param \RestaurantBundle\Entity\Repas $repa
-     *
-     * @return boolean TRUE if this collection contained the specified element, FALSE otherwise.
-     */
-    public function removeRepa(\RestaurantBundle\Entity\Repas $repa)
-    {
-        return $this->repas->removeElement($repa);
-    }
-
-
 }

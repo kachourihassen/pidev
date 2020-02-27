@@ -10,4 +10,9 @@ namespace BibliothequeBundle\Repository;
  */
 class BDRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function getBdByDate(){
+        return $this->createQueryBuilder('bd')
+            ->where('bd.endDateEmprunt < CURRENT_DATE()')
+            ->getQuery()->getResult();
+    }
 }

@@ -1,40 +1,56 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Cds list</h1>
+    <div class="card card-warning">
+        <label class="card-header" >liste de tous les livre</label>
+    </div>
 
-    <table>
+    <table class="table table-bordered">
         <thead>
-            <tr>
-                <th>Maisondeprod</th>
-                <th>Id</th>
-                <th>Titre</th>
-                <th>Description</th>
-                <th>Langue</th>
-                <th>Prix</th>
-                <th>Datepub</th>
-                <th>Actions</th>
-            </tr>
+        <tr>
+            <th>Auteur</th>
+            <th>Id</th>
+            <th>Titre</th>
+            <th>Description</th>
+            <th>Langue</th>
+            <th>Prix</th>
+            <th>Datepub</th>
+            <th>Image</th>
+            <th>Actions</th>
+        </tr>
         </thead>
         <tbody>
-        {% for cD in cDs %}
+        {% for cd in cds %}
             <tr>
-                <td><a href="{{ path('cd_show', { 'id': cD.id }) }}">{{ cD.maisonDeProd }}</a></td>
-                <td>{{ cD.id }}</td>
-                <td>{{ cD.titre }}</td>
-                <td>{{ cD.description }}</td>
-                <td>{{ cD.langue }}</td>
-                <td>{{ cD.prix }}</td>
-                <td>{% if cD.datePub %}{{ cD.datePub|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td><a href="{{ path('cd_show', { 'id': cd.id }) }}">{{ cd.maisonDeProd }}</a></td>
+                <td>{{ cd.id }}</td>
+                <td>{{ cd.titre }}</td>
+                <td>{{ cd.description }}</td>
+                <td>{{ cd.langue }}</td>
+                <td>{{ cd.prix }}</td>
+                <td>{% if cd.datePub %}{{ cd.datePub|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td class="patient-img sorting_1" style=" width: 10px; height: 10px">
+                    <img src="{{ asset('/images/') }}{{ cd.path }}"  style=" width: 40px; height: 40px" alt="">
+                </td>
                 <td>
                     <ul>
                         <li>
-                            <a href="{{ path('cd_show', { 'id': cD.id }) }}">show</a>
+                            <a href="{{ path('cd_show', { 'id': cd.id }) }}">show</a>
                         </li>
-                        <li>
-                            <a href="{{ path('cd_edit', { 'id': cD.id }) }}">edit</a>
-                        </li>
-                    </ul>
+
+                    </ul> <li>
+                        <a href="{{ path('cd_edit', { 'id': cd.id }) }}">edit</a>
+                    </li>
+                </td>
+                <td class="patient-img sorting_1" style=" width: 10px; height: 10px">
+                    <img src="{{ asset('/../../../../web/uploads/films') }}{{ cd.path }}"  style=" width: 20px; height: 20px" alt="">
+                </td>
+                <td>
+
+                    <a class="btn btn-info" href="{{ path('cd_show', { 'id': cd.id }) }}"><i class="fas fa-eye"></i></a>
+
+                    <a class="btn btn-warning" href="{{ path('cd_edit', { 'id': cd.id }) }}"><i class="fas fa-pen"></i></a>
+
                 </td>
             </tr>
         {% endfor %}
@@ -43,7 +59,7 @@
 
     <ul>
         <li>
-            <a href="{{ path('cd_new') }}">Create a new cD</a>
+            <a href="{{ path('cd_new') }}">Ajouter un cd / dvd</a>
         </li>
     </ul>
 {% endblock %}

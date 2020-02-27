@@ -22,3 +22,7 @@ cd_delete:
     path:     /{id}/delete
     defaults: { _controller: "BibliothequeBundle:CD:delete" }
     methods:  DELETE
+consultercd:
+    path:     /consultercd
+    defaults: { _controller: "BibliothequeBundle:CD:consultercd" }
+    methods:  GET

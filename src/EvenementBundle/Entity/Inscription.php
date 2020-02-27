@@ -54,5 +54,54 @@ class Inscription
     {
         return $this->id;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getFacture()
+    {
+        return $this->facture;
+    }
+
+    /**
+     * @param mixed $facture
+     */
+    public function setFacture($facture)
+    {
+        $this->facture = $facture;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getEnfant()
+    {
+        return $this->enfant;
+    }
+
+    /**
+     * @param mixed $enfant
+     */
+    public function setEnfant($enfant)
+    {
+        $this->enfant = $enfant;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getEvenement()
+    {
+        return $this->evenement;
+    }
+
+    /**
+     * @param mixed $evenement
+     */
+    public function setEvenement($evenement)
+    {
+        $this->evenement = $evenement;
+    }
+
 }
 

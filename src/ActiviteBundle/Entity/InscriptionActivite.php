@@ -39,6 +39,54 @@ class InscriptionActivite
     private $enfant;
 
     /**
+     * @return mixed
+     */
+    public function getFacture()
+    {
+        return $this->facture;
+    }
+
+    /**
+     * @param mixed $facture
+     */
+    public function setFacture($facture)
+    {
+        $this->facture = $facture;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getEnfant()
+    {
+        return $this->enfant;
+    }
+
+    /**
+     * @param mixed $enfant
+     */
+    public function setEnfant($enfant)
+    {
+        $this->enfant = $enfant;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getActivite()
+    {
+        return $this->activite;
+    }
+
+    /**
+     * @param mixed $activite
+     */
+    public function setActivite($activite)
+    {
+        $this->activite = $activite;
+    }
+
+    /**
      * Many features have one product. This is the owning side.
      * @ManyToOne(targetEntity="ActiviteBundle\Entity\Activite", inversedBy="inscriptions")
      * @JoinColumn(name="activite", referencedColumnName="id")

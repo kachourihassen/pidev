@@ -1112,21 +1112,7 @@ span.char26 {
 }
 /*-- //stats --*/
 /*-- events --*/
-.events{
-	position:relative;
-	z-index: 1;
-}
-.events:after{
-	content: '';
-    background: url(images/14.jpg) no-repeat 0px 0px;
-    display: block;
-    width: 400px;
-    height: 197px;
-    position: absolute;
-    right: 0%;
-    top: 0%;
-    z-index: -1;
-}
+
 .agile_events_grid{
 	width:45%;
 	margin:0 auto;

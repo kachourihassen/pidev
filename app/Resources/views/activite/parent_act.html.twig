@@ -1,0 +1,130 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <h1>Activites list</h1>
+    <input type="text" id="recherche">
+    <table class="table table-bordered" id="tab">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Categorie</th>
+            <th>Nom</th>
+            <th>Prix</th>
+            <th>Description</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+
+        <TBODY>
+
+        {% for activite in activites %}
+            <tr>
+                <td><a href="{{ path('activite_show', { 'id': activite.id }) }}">{{ activite.id }}</a></td>
+                <td>{{ activite.categorie }}</td>
+                <td>{{ activite.nom }}</td>
+                <td>{{ activite.prix }}</td>
+                <td>{{ activite.description }}</td>
+                <td>
+
+                            <a class="btn btn-default"   href="{{ path('activite_part', { 'id': activite.id }) }}"><i></i>participer</a>
+
+                            <div class="modal fade" id="modal-default">
+                                <form method="post">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h4 class="modal-title">liste des enfants {{ app.user.username  }} </h4>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+
+                                            <p>liste des enfants</p>
+                                            {% for e in parent.enfants %}
+                                            <div>
+                                                <input type="checkbox" id="enfant_{{ e.id }}"  name="{{ e.id }}">
+                                                <label>{{ e.nom }}</label>
+
+                                            </div>
+                                            {% endfor %}
+
+                                        </div>
+                                        <div class="modal-footer justify-content-between">
+                                            <input hidden value="{{ activite.id }}" name="act" type="number" >
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                            <input type="submit" class="btn btn-primary" value="{{ activite.id }}">
+                                        </div>
+
+                                    </div>
+                                    <!-- /.modal-content -->
+
+                                </div>
+                                </form>
+                            </div>
+
+
+
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+        <!-- /.modal-dialog -->
+    </div>
+    <script src="{{ asset('/lib/jquery/jquery.min.js') }}"></script>
+    <script language = "javascript">
+
+        $(document).ready(function(){
+
+            $("#recherche").on("keyup",function(event){
+
+                $r=$("#recherche").val();
+                $.ajax({
+                    url:        "{{ path('filter')}}",
+                    type:       'POST',
+                    dataType:   'json',
+                    data:{'nom':$r},
+                    async:      true,
+                    //en cas de secces creation d'un nouveau table
+                    success: function(data) {
+                        console.log(data);
+
+                        var table = $('#tab');
+                        table.html('');
+                        var table_head = $('<tr>');
+
+                        table_head.append($('<th>').text('id'))
+                        table_head.append($('<th>').text('categorie'))
+                        table_head.append($('<th>').text('nom'))
+                        table_head.append($('<th>').text('prix'))
+                        table_head.append($('<th>').text('description'))
+                        table_head.append($('<th>').text('Action'))
+                        table.append(table_head);
+
+                        for(var x in data){
+                            var tr = $('<tr>');
+
+                            tr.append($('<td>').text(data[x].id));
+                            tr.append($('<td>').text(data[x].categorie));
+                            tr.append($('<td>').text(data[x].nom));
+                            tr.append($('<td>').text(data[x].prix));
+                            tr.append($('<td>').text(data[x].description));
+                            tr.append($('<td><button id="show" class="btn btn-default" data-toggle="modal" data-target="#modal-default" href="/activite/activete'+data[x].id+'/show">participer</button>'));
+                            table.append(tr);
+                        };
+
+
+                    },
+                    //error en cas de faild
+                    error : function(xhr, textStatus, errorThrown) {
+                        alert('Ajax request failed.');
+                    }
+                });
+
+            })
+        });
+
+    </script>
+
+{% endblock %}

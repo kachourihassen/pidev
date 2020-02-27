@@ -1,7 +1,7 @@
 <?php
 
 namespace RHBundle\Entity;
-
+use Symfony\Component\Validator\Constraints as Assert;
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\ORM\Mapping\JoinTable;
 use Doctrine\ORM\Mapping\ManyToMany;
@@ -36,6 +36,12 @@ class Classe
      * @var int
      *
      * @ORM\Column(name="age_min", type="integer")
+     * @Assert\GreaterThan(
+     *     value = 0
+     *     )
+     *  @Assert\Type("integer")
+     * @Assert\Expression("value < this.getAgeMax()",
+     * message="age max doit etre inferieur a age min")
      */
 
     private $ageMin;
@@ -44,20 +50,42 @@ class Classe
      * @var int
      *
      * @ORM\Column(name="age_max", type="integer")
+     * @Assert\GreaterThan(value = 0)
+     * @Assert\Type("integer")
+     * @Assert\Expression("value > this.getAgeMin()",
+     *     message="age max doit etre superieur a age min")
      */
     private $ageMax;
+    /**
+     * One product has many features. This is the inverse side.
+     * @OneToMany(targetEntity="RHBundle\Entity\Enseignant", mappedBy="classe")
+     */
+    private $enseignant;
+
+    /**
+     * @return mixed
+     */
+    public function getEnseignant()
+    {
+        return $this->enseignant;
+    }
+
+
 
     /**
      * @var int
      *
      * @ORM\Column(name="nb_enfants_max", type="integer")
+     * @Assert\GreaterThan(
+     *     value = 3
+     *     )
      */
     private $nbEnfantsMax;
 
     /**
      * @var int
      *
-     * @ORM\Column(name="nbEnfants", type="integer" , nullable=true)
+     * @ORM\Column(name="nbEnfants", type="integer" , nullable=true ,options={"default" : 0})
      */
     private $nbEnfants;
 
@@ -117,7 +145,6 @@ class Classe
     {
         return $this->nom;
     }
-
 
     /**
      * Set ageMin

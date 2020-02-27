@@ -9,7 +9,11 @@
                     <span class="direct-chat-timestamp float-right">{{ chatMessage.date | date("Y-m-d H:m:s")}}</span>
                 </div>
                 <!-- /.direct-chat-infos -->
-                <img class="direct-chat-img" src="{{ asset('/dist/img/user_logo.png') }}" alt="Message User Image">
+                {% if is_granted('ROLE_ADMIN') %}
+                    <img class="direct-chat-img" src="{{ asset('/dist/img/user_logo.png') }}" alt="Message User Image">
+                {% elseif is_granted('ROLE_PARENT') or   is_granted('ROLE_ENSEIGNANT') %}
+                    <img class="img-thumbnail img-responsive" width="25" src="{{ asset('/dist/img/user_logo.png') }}" alt="Message User Image">
+                {% endif %}
                 <!-- /.direct-chat-img -->
                 <div class="direct-chat-text">
                     {{ chatMessage.texte }}
@@ -24,7 +28,11 @@
                     <span class="direct-chat-timestamp float-left">{{ chatMessage.date | date("Y-m-d H:m:s")}}</span>
                 </div>
                 <!-- /.direct-chat-infos -->
-                <img class="direct-chat-img" src="{{ asset('/dist/img/user_logo.png') }}" alt="Message User Image">
+                {% if is_granted('ROLE_ADMIN') %}
+                    <img class="direct-chat-img" src="{{ asset('/dist/img/user_logo.png') }}" alt="Message User Image">
+                {% elseif is_granted('ROLE_PARENT') or   is_granted('ROLE_ENSEIGNANT') %}
+                    <img class="img-thumbnail img-responsive" width="25" src="{{ asset('/dist/img/user_logo.png') }}" alt="Message User Image">
+                {% endif %}
                 <!-- /.direct-chat-img -->
                 <div class="direct-chat-text">
                     {{ chatMessage.texte }}

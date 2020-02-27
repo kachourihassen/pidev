@@ -2,9 +2,14 @@
 
 namespace BibliothequeBundle\Controller;
 
+use BibliothequeBundle\Entity\Document;
+use BibliothequeBundle\Entity\Emprunter;
 use BibliothequeBundle\Entity\Livre;
+use RHBundle\Entity\Enfant;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Validator\Constraints\Date;
+use Symfony\Component\Validator\Constraints\DateTime;
 
 /**
  * Livre controller.
@@ -39,6 +44,9 @@ class LivreController extends Controller
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
+            $livre->upload();
+            $date=new \DateTime(Date('yy-m-d', strtotime("-1 days")));
+            $livre->setEndDateEmprunt($date);
             $em->persist($livre);
             $em->flush();
 
@@ -87,6 +95,49 @@ class LivreController extends Controller
             'delete_form' => $deleteForm->createView(),
         ));
     }
+
+    public function emprunterAction(Request $request)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $emprunter = new Emprunter();
+
+        $enfant = $em->getRepository(Enfant::class)->find(1);
+
+        $document = $em->getRepository(Document::class)->find($request->get('id'));
+
+        $date=new \DateTime(Date('yy-m-d', strtotime("+3 days")));
+        $emprunter->setEnfant($enfant);
+        $emprunter->setDocument($document);
+        $emprunter->setDateEmprunt($date);
+
+        $document->setEndDateEmprunt($date);
+        $em->persist($emprunter);
+        $em->flush();
+
+        return $this->redirectToRoute('app_index');
+
+    }
+    public function showlivrefrontAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $livres = $em->getRepository(Document::class)->findAll();
+
+        return $this->render('livre/showlivre.html.twig', array(
+            'livres' => $livres,
+        ));
+    }
+    public function consulterlivreAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $livres = $em->getRepository('BibliothequeBundle:Livre')->getLivreByDate();
+
+        return $this->render('livre/livrefront.html.twig', array(
+            'livres' => $livres,
+        ));
+    }
+
 
     /**
      * Deletes a livre entity.

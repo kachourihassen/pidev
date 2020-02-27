@@ -13,7 +13,9 @@ class LivreType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('auteur')->add('titre')->add('description')->add('langue')->add('prix')->add('datePub');
+        $builder->add('auteur')->add('titre')->add('description')->add('langue')
+            ->add('prix')->add('datePub')
+            ->add('file');
     }/**
      * {@inheritdoc}
      */
@@ -31,6 +33,9 @@ class LivreType extends AbstractType
     {
         return 'bibliothequebundle_livre';
     }
+    public function __toString(){
 
+        return "Livre" ;
+    }
 
 }

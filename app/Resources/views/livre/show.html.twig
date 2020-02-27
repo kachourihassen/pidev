@@ -1,52 +1,66 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Livre</h1>
+    <div class="card card-warning">
+        <label class="card-header" >tous les Livres </label>
+    </div>
 
-    <table>
+    <table class="table table-bordered">
         <tbody>
-            <tr>
-                <th>Auteur</th>
-                <td>{{ livre.auteur }}</td>
-            </tr>
-            <tr>
-                <th>Id</th>
-                <td>{{ livre.id }}</td>
-            </tr>
-            <tr>
-                <th>Titre</th>
-                <td>{{ livre.titre }}</td>
-            </tr>
-            <tr>
-                <th>Description</th>
-                <td>{{ livre.description }}</td>
-            </tr>
-            <tr>
-                <th>Langue</th>
-                <td>{{ livre.langue }}</td>
-            </tr>
-            <tr>
-                <th>Prix</th>
-                <td>{{ livre.prix }}</td>
-            </tr>
-            <tr>
-                <th>Datepub</th>
-                <td>{% if livre.datePub %}{{ livre.datePub|date('Y-m-d H:i:s') }}{% endif %}</td>
-            </tr>
+        <tr>
+            <th style="width:9px">Id</th>
+            <td>{{ livre.id }}</td>
+        </tr>
+        <tr>
+            <th>Titre</th>
+            <td>{{ livre.titre }}</td>
+        </tr>
+        <tr>
+            <th>Auteur</th>
+            <td>{{ livre.auteur }}</td>
+        </tr>
+        <tr>
+            <th>Description</th>
+            <td>{{ livre.description }}</td>
+        </tr>
+        <tr>
+            <th>Prix</th>
+            <td>{{ livre.prix }}</td>
+        </tr>
+        <tr>
+            <th>langue</th>
+            <td>{{ livre.langue }}</td>
+        </tr>
+        <tr>
+            <th>Date publication</th>
+            <td>{% if livre.datePub %}{{ livre.datePub|date('Y-m-d H:i:s') }}{% endif %}</td>
+        </tr>
+
+        <tr>
+            <th>Image</th>
+            <td class="patient-img sorting_1" style=" width: 10px; height: 10px">
+                <img src="{{ asset('/images/') }}{{ livre.path }}"  style=" width: 20px; height: 20px" alt="">
+            </td>
+        </tr>
         </tbody>
     </table>
 
     <ul>
-        <li>
-            <a href="{{ path('livre_index') }}">Back to the list</a>
-        </li>
-        <li>
-            <a href="{{ path('livre_edit', { 'id': livre.id }) }}">Edit</a>
-        </li>
-        <li>
-            {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
-            {{ form_end(delete_form) }}
-        </li>
+        <div class="col-md-2">
+            <div class="card-body pad table-responsive">
+                <a  class="btn btn-block btn-outline-secondary" href="{{ path('livre_index') }}">Back to the list</a>
+            </div>
+        </div>
+
+        <a class="btn btn-warning" href="{{ path('livre_edit', { 'id': livre.id }) }}"><i class="fas fa-pen"></i></a>
+
+        <div class="col-md-2">
+            <div class="card-body pad table-responsive">
+                {{ form_start(delete_form) }}
+                <input type="submit" class="btn btn-block btn-outline-danger" class="fas fa-trash" value="Supprimer" />
+                {{ form_end(delete_form) }}
+            </div>
+        </div>
+
     </ul>
 {% endblock %}

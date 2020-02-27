@@ -13,7 +13,7 @@ class EnseignantType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('salaire')->add('mdp')->add('nom')->add('prenom')->add('adresse')->add('dateDeNaissance')->add('classe');
+        $builder->add('nom')->add('prenom')->add('email')->add('adresse')->add('dateDeNaissance')->add('classe')->add('salaire');
     }/**
      * {@inheritdoc}
      */

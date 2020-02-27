@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <div class="card card-warning">
+        <label class="card-header" >liste de facture</label>
+    </div>
+
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>titre</th>
+            <th>description</th>
+            <th>date de creation</th>
+            <th>date de payement</th>
+            <th>montant</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for fct in facts %}
+            <tr>
+
+                <td>{{ fct.id }}</td>
+                <td>{{ fct.titre }}</td>
+                <td>{{ fct.description }}</td>
+                <td>date{{ fct.dateCreation|date('Y-M-D H:I:S') }}</td>
+                <td>date{{ fct.datePayement|date('Y-M-D H:I:S') }}</td>
+                <td>{{ fct.montant }}</td>
+                <td>
+
+
+
+                    <a class="btn btn-block btn-outline-primary" href="{{ path('pay_form', { 'montant': fct.montant }) }}"> payer</a>
+
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

@@ -13,7 +13,13 @@ class CDType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('maisonDeProd')->add('titre')->add('description')->add('langue')->add('prix')->add('datePub');
+        $builder->add('maisonDeProd')
+            ->add('titre')
+            ->add('description')
+            ->add('langue')
+            ->add('prix')
+            ->add('datePub')
+            ->add('file');
     }/**
      * {@inheritdoc}
      */
